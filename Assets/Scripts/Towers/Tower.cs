@@ -27,7 +27,7 @@ namespace PvZRI.Towers
             sightRange.radius = range;
 
 
-            gm = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
+            //gm = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
         }
 
         void Update()
@@ -38,10 +38,6 @@ namespace PvZRI.Towers
             if (shootingAt != null)
                 ShootAtTarget(shootingAt);
 
-            if(gm.selected == this)
-            {
-
-            }
         }
 
         private void LookAtTargets()
@@ -67,7 +63,6 @@ namespace PvZRI.Towers
                 timeSinceLastAttack = Time.time;
                 GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
                 shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * 5;
-                Destroy(shot, 5);
             }
         }
 
@@ -76,7 +71,7 @@ namespace PvZRI.Towers
         {
             if (Input.GetMouseButtonDown(0))
             {
-                gm.selected = this;
+              //  gm.selected = this;
             }
         }
         
