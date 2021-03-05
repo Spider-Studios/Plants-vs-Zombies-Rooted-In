@@ -33,11 +33,19 @@ namespace PvZRI.Interaction
 
             if (Input.GetKeyDown(KeyCode.A))
             {
-                HoverTower();
+               HoverTower();
+            }
+
+            if(showSprite)
+            {
+                if(Input.GetMouseButtonDown(1))
+                {
+                    PlaceTower();
+                }
             }
         }
 
-        private void HoverTower()
+        public void HoverTower()
         {
             sprite = new GameObject("hover sprite");
             sprite.AddComponent<SpriteRenderer>();
@@ -45,9 +53,9 @@ namespace PvZRI.Interaction
             showSprite = true;
         }
 
-        private void PlaceTower()
+        public void PlaceTower()
         {
-
+            showSprite = false;
             Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             spawnPosition.z = -0.2f;
             Instantiate(towerToSpawn, spawnPosition, Quaternion.identity);

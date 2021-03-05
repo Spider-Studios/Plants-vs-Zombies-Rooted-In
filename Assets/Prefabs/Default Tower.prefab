@@ -104,8 +104,10 @@ MonoBehaviour:
   targets: []
   shootingAt: {fileID: 0}
   projectileSpawn: {fileID: 6683730700520231442}
-  projectile: {fileID: 0}
+  projectile: {fileID: 2366004677586742330, guid: ffa6bb0d833fab54880b772e14df549f,
+    type: 3}
   sightRange: {fileID: 0}
+  gm: {fileID: 0}
 --- !u!58 &4513153495644937650
 CircleCollider2D:
   m_ObjectHideFlags: 0

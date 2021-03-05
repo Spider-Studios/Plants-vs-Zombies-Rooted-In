@@ -7,6 +7,8 @@ TagManager:
   - Projectile
   - Zombie
   - Waypoint
+  - Waypoints
+  - GameMaster
   layers:
   - Default
   - TransparentFX
