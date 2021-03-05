@@ -19,7 +19,7 @@ namespace PvZRI.Towers
 
         public CircleCollider2D sightRange = null;
 
-        SelectTower gm = null;
+        public SelectTower gm = null;
 
         void Start()
         {
@@ -27,7 +27,7 @@ namespace PvZRI.Towers
             sightRange.radius = range;
 
 
-            //gm = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
+            gm = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
         }
 
         void Update()
@@ -71,7 +71,7 @@ namespace PvZRI.Towers
         {
             if (Input.GetMouseButtonDown(0))
             {
-              //  gm.selected = this;
+              gm.selected = this;
             }
         }
         
