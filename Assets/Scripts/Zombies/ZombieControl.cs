@@ -41,6 +41,8 @@ namespace PvZRI.Zombies
             {
                 transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
+                Vector2 lookat = transform.right = -waypoints[waypointIndex].transform.position - -transform.position;
+
                 if (transform.position == waypoints[waypointIndex].transform.position)
                 {
                     waypointIndex += 1;
