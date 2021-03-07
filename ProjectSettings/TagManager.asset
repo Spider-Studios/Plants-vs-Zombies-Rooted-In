@@ -9,6 +9,12 @@ TagManager:
   - Waypoint
   - Waypoints
   - GameMaster
+  - Plant
+  - Track
+  - House
+  - Grass
+  - Water
+  - Rock
   layers:
   - Default
   - TransparentFX

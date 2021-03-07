@@ -9,6 +9,7 @@ namespace PvZRI.Towers
     {
         public float range = 1;
         public float timeBetweenAttacks = 1;
+        public float projectileSpeed = 1;
         float timeSinceLastAttack;
 
         public List<GameObject> targets = new List<GameObject>();
@@ -20,6 +21,11 @@ namespace PvZRI.Towers
         public CircleCollider2D sightRange = null;
 
         public SelectTower gm = null;
+
+        [SerializeField]
+        public enum CanBePlacedOn { Grass, Water, Track};
+
+        public CanBePlacedOn canBePlacedOn;
 
         void Start()
         {
@@ -62,7 +68,7 @@ namespace PvZRI.Towers
             {
                 timeSinceLastAttack = Time.time;
                 GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
-                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * 5;
+                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
             }
         }
 

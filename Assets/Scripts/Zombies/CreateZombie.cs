@@ -14,5 +14,16 @@ public class CreateZombie : MonoBehaviour
         {
             Instantiate(zombieToSpawn, spawnLocation.position, Quaternion.identity);
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale++;
+            }
+            else
+            {
+                Time.timeScale--;
+            }
+        }
     }
 }

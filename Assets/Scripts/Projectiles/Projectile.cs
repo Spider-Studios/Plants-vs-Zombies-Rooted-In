@@ -7,8 +7,7 @@ namespace PvZRI.Towers
 {
     public class Projectile : MonoBehaviour
     {
-        public float moveSpeed = 1;
-        public float damage = 1;
+        public int damage = 1;
         public int health = 1;
 
         private void Start()
@@ -28,7 +27,7 @@ namespace PvZRI.Towers
         {
             if (other.gameObject.tag == ("Zombie"))
             {
-                other.GetComponent<ZombieControl>().health--;
+                other.GetComponent<ZombieControl>().health-= damage;
 
                 health--;
             }

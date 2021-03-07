@@ -7,18 +7,22 @@ namespace PvZRI.Zombies
 {
     public class ZombieControl : MonoBehaviour
     {
-        [SerializeField] Transform waypointParent;
-        private GameObject[] waypoints;
+        public GameObject[] waypoints;
         [SerializeField]
         private float moveSpeed = 2f;
         private int waypointIndex = 0;
 
         public int health = 0;
 
-        private void Start()
+        void Start()
+        {
+            GetWaypoints();
+            transform.position = waypoints[waypointIndex].transform.position;
+        }
+
+        public void GetWaypoints()
         {
             waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
-            transform.position = waypoints[waypointIndex].transform.position;
         }
 
         private void Update()
@@ -31,7 +35,7 @@ namespace PvZRI.Zombies
             }
         }
 
-        private void move()
+        public void move()
         {
             if (waypointIndex <= waypoints.Length - 1)
             {

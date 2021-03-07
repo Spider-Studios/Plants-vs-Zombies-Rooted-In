@@ -19,6 +19,7 @@ namespace PvZRI.Interaction
 
         void Update()
         {
+            print(CheckWhatMouseIsOver());
             if (sprite != null)
             {
                 if (sprite.active)
@@ -31,21 +32,24 @@ namespace PvZRI.Interaction
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-               HoverTower();
-            }
-
             if(showSprite)
             {
-                if(Input.GetMouseButtonDown(1))
+                if(CheckWhatMouseIsOver() == towerToSpawn.canBePlacedOn.ToString())
                 {
-                    PlaceTower();
+                    sprite.GetComponent<SpriteRenderer>().color = Color.white;
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        PlaceTower();
+                    }
+                }
+                else
+                {
+                    sprite.GetComponent<SpriteRenderer>().color = Color.red;
                 }
             }
         }
 
-        public void HoverTower()
+        public void ShowHoverSprite()
         {
             sprite = new GameObject("hover sprite");
             sprite.AddComponent<SpriteRenderer>();
@@ -56,9 +60,23 @@ namespace PvZRI.Interaction
         public void PlaceTower()
         {
             showSprite = false;
+            Destroy(sprite);
             Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            spawnPosition.z = -0.2f;
+            spawnPosition.z = -6f;
             Instantiate(towerToSpawn, spawnPosition, Quaternion.identity);
+        }
+
+        public string CheckWhatMouseIsOver()
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (hit != false)
+            {
+                //if (hit.transform.tag != "Untagged")
+                {
+                    return hit.transform.tag;
+                }
+            }
+            return null;
         }
     }
 }
