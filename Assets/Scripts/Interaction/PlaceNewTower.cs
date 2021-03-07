@@ -32,9 +32,9 @@ namespace PvZRI.Interaction
                 }
             }
 
-            if(showSprite)
+            if (showSprite)
             {
-                if(CheckWhatMouseIsOver() == towerToSpawn.canBePlacedOn.ToString())
+                if (CheckWhatMouseIsOver() == towerToSpawn.canBePlacedOn.ToString())
                 {
                     sprite.GetComponent<SpriteRenderer>().color = Color.white;
                     if (Input.GetMouseButtonDown(1))
@@ -53,7 +53,7 @@ namespace PvZRI.Interaction
         {
             sprite = new GameObject("hover sprite");
             sprite.AddComponent<SpriteRenderer>();
-            sprite.GetComponent<SpriteRenderer>().sprite = towerToSpawn.GetComponent<SpriteRenderer>().sprite;            
+            sprite.GetComponent<SpriteRenderer>().sprite = towerToSpawn.GetComponent<SpriteRenderer>().sprite;
             showSprite = true;
         }
 
@@ -71,10 +71,7 @@ namespace PvZRI.Interaction
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit != false)
             {
-                //if (hit.transform.tag != "Untagged")
-                {
-                    return hit.transform.tag;
-                }
+                return hit.transform.tag;
             }
             return null;
         }
