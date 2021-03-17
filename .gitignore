@@ -63,3 +63,7 @@ crashlytics-build.properties
 
 
 UserSettings/EditorUserSettings.asset
+
+Assets/Scenes/Reece.unity
+
+Assets/Scripts/Zombies/ZombieControl.cs
