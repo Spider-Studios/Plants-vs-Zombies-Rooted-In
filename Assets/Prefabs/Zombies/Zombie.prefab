@@ -117,7 +117,7 @@ MonoBehaviour:
   waypoints: []
   moveSpeed: 2
   health: 5
-  reward: 50
+  reward: 5
 --- !u!95 &431716176
 Animator:
   serializedVersion: 3

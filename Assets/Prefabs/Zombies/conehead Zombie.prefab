@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: health
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7831621989952849195, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
+        type: 3}
+      propertyPath: reward
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
         type: 3}
       propertyPath: m_Name
