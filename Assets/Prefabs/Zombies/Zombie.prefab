@@ -114,9 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e584cd43751bd44e8ed6c3d9c505701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointParent: {fileID: 0}
+  waypoints: []
   moveSpeed: 2
   health: 5
+  reward: 50
 --- !u!95 &431716176
 Animator:
   serializedVersion: 3

@@ -13,11 +13,14 @@ namespace PvZRI.Zombies
         private int waypointIndex = 0;
 
         public int health = 0;
+        public int reward;
+        SunTracker sunTracker;
 
         void Start()
         {
             GetWaypoints();
             transform.position = waypoints[waypointIndex].transform.position;
+            sunTracker = GetComponent<SunTracker>();
         }
 
         public void GetWaypoints()
@@ -32,6 +35,7 @@ namespace PvZRI.Zombies
             if (health <= 0)
             {
                 Destroy(gameObject);
+                sunTracker.AddSun(reward);
             }
         }
 
