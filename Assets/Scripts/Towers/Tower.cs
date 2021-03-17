@@ -7,42 +7,62 @@ namespace PvZRI.Towers
 {
     public class Tower : MonoBehaviour
     {
+        [Tooltip("Cost of the plant")]
+        public int cost;
+
+        [Space]
         public float range = 1;
         public float timeBetweenAttacks = 1;
-        public float projectileSpeed = 1;
         float timeSinceLastAttack;
 
-        public List<GameObject> targets = new List<GameObject>();
-        public Transform shootingAt = null;
+        [Space]
+        public GameObject projectile = null;
         public Transform projectileSpawn = null;
 
-        public GameObject projectile = null;
-
-        public CircleCollider2D sightRange = null;
-
-        public SelectTower gm = null;
-
         [SerializeField]
-        public enum CanBePlacedOn { Grass, Water, Track};
-
+        public enum CanBePlacedOn { Grass, Water, Track };
+        [Space]
         public CanBePlacedOn canBePlacedOn;
+
+        public int killCount = 0;
+
+        [HideInInspector]
+        public List<GameObject> targets = new List<GameObject>();
+        Transform shootingAt = null;
+                
+        CircleCollider2D sightRange = null;
+
+        SelectTower selectTower = null;
+
+        [HideInInspector]
+        public GameObject rangeDisplay = null;
 
         void Start()
         {
             sightRange = transform.Find("Sight Range").GetComponent<CircleCollider2D>();
             sightRange.radius = range;
 
+            rangeDisplay = sightRange.transform.GetChild(0).gameObject;
+            rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
 
-            gm = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
+            selectTower = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
         }
 
         void Update()
         {
-            if (targets.Count == 0) shootingAt = null;
+            if (projectile != null)
+            {
+                if (targets.Count == 0) shootingAt = null;
 
-            LookAtTargets();
-            if (shootingAt != null)
-                ShootAtTarget(shootingAt);
+                LookAtTargets();
+                if (shootingAt != null)
+                    ShootAtTarget(shootingAt);
+            }
+
+            if(selectTower.selected != this)
+            {
+                rangeDisplay.SetActive(false);
+            }
 
         }
 
@@ -68,7 +88,7 @@ namespace PvZRI.Towers
             {
                 timeSinceLastAttack = Time.time;
                 GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
-                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
+                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed;
             }
         }
 
@@ -77,9 +97,10 @@ namespace PvZRI.Towers
         {
             if (Input.GetMouseButtonDown(0))
             {
-              gm.selected = this;
+                selectTower.selected = this;
+                selectTower.ShowSelectedPanel();
             }
         }
-        
+
     }
 }
