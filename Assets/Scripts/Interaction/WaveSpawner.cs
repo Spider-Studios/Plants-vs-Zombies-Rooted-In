@@ -22,12 +22,14 @@ public class WaveSpawner : MonoBehaviour
     private Wave currentWave;
     private int currentWaveNumber;
     private float nextSpawnTime;
-   
+    public Text currentWaveDisplay;
+
 
     private bool canSpawn = true;
     private void Update()
     {
         currentWave = waves[currentWaveNumber];
+        currentWaveDisplay.text = "Wave: " + currentWave.waveName;
         SpawnWave();
         GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Zombie");
         if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber+1 != waves.Length)
