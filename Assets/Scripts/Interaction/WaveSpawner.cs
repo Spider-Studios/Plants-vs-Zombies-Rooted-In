@@ -6,10 +6,9 @@ using UnityEngine.UI;
 public class Wave
 {
     public string waveName;
-    public int noOfEnemies;
-    public GameObject[] typeOfEnemies;
+    public GameObject[] enemies;
     public float spawnInterval;
-    
+    public int reward;
 }
 public class WaveSpawner : MonoBehaviour
 {
@@ -17,8 +16,9 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject startWaveButton;
     public GameObject waveSpawner;
-   
+    public SunTracker sunTracker;
 
+    private int positionInWave = 0;
     private Wave currentWave;
     private int currentWaveNumber;
     private float nextSpawnTime;
@@ -32,19 +32,18 @@ public class WaveSpawner : MonoBehaviour
         GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Zombie");
         if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber+1 != waves.Length)
         {
+            positionInWave = 0;
             startWaveButton.SetActive(true);
+            sunTracker.AddSun(currentWave.reward);
             currentWaveNumber++;
             waveSpawner.SetActive(false);
             canSpawn = true;
+            
+
         }
     }
 
-    void SpawnNextWave()
-    {
-        currentWaveNumber++;
-        canSpawn = true;
-   
-    }
+    
 
     void SpawnWave()
     {
@@ -54,13 +53,18 @@ public class WaveSpawner : MonoBehaviour
         if (canSpawn && nextSpawnTime < Time.time)
         {
 
-            GameObject randomEnemy = currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
+
             Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
-            currentWave.noOfEnemies--;
+
+           
+            
+            Instantiate(currentWave.enemies[positionInWave], randomPoint.position, Quaternion.identity);
+
+            positionInWave++;
+            
             nextSpawnTime = Time.time + currentWave.spawnInterval;
 
-            if (currentWave.noOfEnemies == 0)
+            if (positionInWave >= currentWave.enemies.Length)
             {
                 canSpawn = false;
              

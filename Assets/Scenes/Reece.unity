@@ -397,24 +397,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: wave 1
-    noOfEnemies: 4
-    typeOfEnemies:
+    enemies:
+    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
+    - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
+    spawnInterval: 2
+    reward: 100
+  - waveName: wave 2
+    enemies:
     - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
     spawnInterval: 2
-  - waveName: wave 1
-    noOfEnemies: 6
-    typeOfEnemies:
-    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
-    spawnInterval: 2
-  - waveName: wave 1
-    noOfEnemies: 10
-    typeOfEnemies:
-    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
+    reward: 150
+  - waveName: wave 3
+    enemies:
+    - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
     spawnInterval: 1
+    reward: 200
   spawnPoints:
   - {fileID: 328918053}
   startWaveButton: {fileID: 2118747147}
   waveSpawner: {fileID: 328918052}
+  sunTracker: {fileID: 1941718423}
 --- !u!224 &560353906 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5299511599792877546, guid: ef638432ba04f0447a22b86345bd1c48,
