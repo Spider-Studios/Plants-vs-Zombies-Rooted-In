@@ -23,28 +23,28 @@ namespace PvZRI.Interaction
         {
            if(Input.GetMouseButtonDown(1))
             {
-                selected = null;
+                if (selected != null)
+                {
+                    HideSelectedPanel();
+                }
             }
 
-           if(selected != null)
-            {
-                ShowSelectedPanel();
-            }
-           else
-            {
-                HideSelectedPanel();
-            }
+          
         }
 
-        private void ShowSelectedPanel()
+        public void ShowSelectedPanel()
         {
+            selected.rangeDisplay.SetActive(true);
+
             selectedPanel.SetActive(true);
             selectedPanel.transform.Find("Tower Name").GetComponent<Text>().text = selected.name;
         }
 
         private void HideSelectedPanel()
         {
+            selected.rangeDisplay.SetActive(false);
             selectedPanel.SetActive(false);
+            selected = null;
         }
     }
 }

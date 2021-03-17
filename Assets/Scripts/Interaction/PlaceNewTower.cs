@@ -9,17 +9,19 @@ namespace PvZRI.Interaction
 {
     public class PlaceNewTower : MonoBehaviour
     {
-        [SerializeField] Tower towerToSpawn = null;
-        [SerializeField] bool showSprite = false;
+        Tower towerToSpawn = null;
+        bool showSprite = false;
         GameObject sprite = null;
+
+        SunTracker sunTracker;
         void Start()
         {
-
+            sunTracker = GetComponent<SunTracker>();
         }
 
         void Update()
         {
-            print(CheckWhatMouseIsOver());
+           // print(CheckWhatMouseIsOver());
             if (sprite != null)
             {
                 if (sprite.active)
@@ -49,21 +51,30 @@ namespace PvZRI.Interaction
             }
         }
 
-        public void ShowHoverSprite()
+        public void ShowHoverSprite(Tower t)
         {
-            sprite = new GameObject("hover sprite");
-            sprite.AddComponent<SpriteRenderer>();
-            sprite.GetComponent<SpriteRenderer>().sprite = towerToSpawn.GetComponent<SpriteRenderer>().sprite;
-            showSprite = true;
+            towerToSpawn = t;
+            if (sunTracker.HaveEnoughSun(towerToSpawn.cost))
+            {
+                sprite = new GameObject("hover sprite");
+                sprite.AddComponent<SpriteRenderer>();
+                sprite.GetComponent<SpriteRenderer>().sprite = towerToSpawn.GetComponent<SpriteRenderer>().sprite;
+                showSprite = true;
+            }
+            else
+            {
+                print("Not enough sun");
+            }
         }
 
         public void PlaceTower()
-        {
-            showSprite = false;
-            Destroy(sprite);
-            Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            spawnPosition.z = -6f;
-            Instantiate(towerToSpawn, spawnPosition, Quaternion.identity);
+        {            
+                sunTracker.MinusSun(towerToSpawn.cost);
+                showSprite = false;
+                Destroy(sprite);
+                Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                spawnPosition.z = -6f;
+                Instantiate(towerToSpawn, spawnPosition, Quaternion.identity);
         }
 
         public string CheckWhatMouseIsOver()
