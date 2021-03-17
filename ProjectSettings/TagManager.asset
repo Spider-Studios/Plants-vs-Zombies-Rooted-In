@@ -15,6 +15,7 @@ TagManager:
   - Grass
   - Water
   - Rock
+  - House Entrance
   layers:
   - Default
   - TransparentFX

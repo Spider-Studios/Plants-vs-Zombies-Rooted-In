@@ -55,8 +55,9 @@ namespace PvZRI.Zombies
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.tag == ("House"))
+            if (other.gameObject.tag == "House")
             {
+                print("S");
                 Destroy(gameObject);
             }
         }
