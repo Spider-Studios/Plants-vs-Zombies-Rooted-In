@@ -15,17 +15,12 @@ namespace PvZRI.Zombies
         public int health = 0;
         public int reward;
         SunTracker sunTracker;
-            
-        
 
         void Start()
         {
             GetWaypoints();
             transform.position = waypoints[waypointIndex].transform.position;
             sunTracker = GameObject.Find("GameMaster").GetComponent<SunTracker>();
-
-
-
         }
 
         public void GetWaypoints()
@@ -41,8 +36,7 @@ namespace PvZRI.Zombies
             {
                 Destroy(gameObject);
                 sunTracker.AddSun(reward);
-            }
-            
+            }  
         }
 
         public void move()
@@ -57,6 +51,13 @@ namespace PvZRI.Zombies
                 {
                     waypointIndex += 1;
                 }
+            }
+        }
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == ("House"))
+            {
+                Destroy(gameObject);
             }
         }
     }
