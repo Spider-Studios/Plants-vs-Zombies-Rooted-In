@@ -55,14 +55,8 @@ namespace PvZRI.Zombies
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
-<<<<<<< Updated upstream
-            if (other.gameObject.tag == "House")
-            {
-                print("S");
-=======
             if (other.gameObject.tag == ("House"))
             {
->>>>>>> Stashed changes
                 Destroy(gameObject);
             }
         }
