@@ -110,6 +110,7 @@ MonoBehaviour:
   canBePlacedOn: 0
   killCount: 0
   targets: []
+  rangeDisplay: {fileID: 0}
 --- !u!58 &4513153495644937650
 CircleCollider2D:
   m_ObjectHideFlags: 0

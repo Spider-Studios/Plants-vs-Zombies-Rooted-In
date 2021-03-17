@@ -13,6 +13,9 @@ namespace PvZRI.Interaction
         bool showSprite = false;
         GameObject sprite = null;
 
+        public GameObject rangeDisp;
+        GameObject disp;
+
         SunTracker sunTracker;
         void Start()
         {
@@ -39,6 +42,7 @@ namespace PvZRI.Interaction
                 if (CheckWhatMouseIsOver() == towerToSpawn.canBePlacedOn.ToString())
                 {
                     sprite.GetComponent<SpriteRenderer>().color = Color.white;
+                    disp.GetComponent<SpriteRenderer>().color = new Color(161,161,161,0.5f);
                     if (Input.GetMouseButtonDown(1))
                     {
                         PlaceTower();
@@ -47,6 +51,7 @@ namespace PvZRI.Interaction
                 else
                 {
                     sprite.GetComponent<SpriteRenderer>().color = Color.red;
+                    disp.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 0.5f);
                 }
             }
         }
@@ -59,6 +64,8 @@ namespace PvZRI.Interaction
                 sprite = new GameObject("hover sprite");
                 sprite.AddComponent<SpriteRenderer>();
                 sprite.GetComponent<SpriteRenderer>().sprite = towerToSpawn.GetComponent<SpriteRenderer>().sprite;
+                disp = Instantiate(rangeDisp, sprite.transform);
+                disp.transform.localScale = new Vector3(towerToSpawn.range * 2, towerToSpawn.range * 2, 0);
                 showSprite = true;
             }
             else
