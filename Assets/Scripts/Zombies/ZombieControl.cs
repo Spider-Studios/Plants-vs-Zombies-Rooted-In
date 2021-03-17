@@ -14,13 +14,16 @@ namespace PvZRI.Zombies
 
         public int health = 0;
         public int reward;
+        public int damageToPlayer;
         SunTracker sunTracker;
+        BrainsTracker brainsTracker;
 
         void Start()
         {
             GetWaypoints();
             transform.position = waypoints[waypointIndex].transform.position;
             sunTracker = GameObject.Find("GameMaster").GetComponent<SunTracker>();
+            brainsTracker = GameObject.Find("GameMaster").GetComponent<BrainsTracker>();
         }
 
         public void GetWaypoints()
@@ -58,6 +61,7 @@ namespace PvZRI.Zombies
             if (other.gameObject.tag == ("House"))
             {
                 Destroy(gameObject);
+                brainsTracker.Minushealth(damageToPlayer);
             }
         }
     }
