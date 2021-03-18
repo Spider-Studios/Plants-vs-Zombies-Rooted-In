@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 1
-  speed: 15
+  health: 0
+  firedFrom: {fileID: 0}
 --- !u!50 &2366004677586742328
 Rigidbody2D:
   serializedVersion: 4

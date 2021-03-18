@@ -8,8 +8,7 @@ namespace PvZRI.Towers
     public class Projectile : MonoBehaviour
     {
         public float damage;
-        [Tooltip("How many zombies can the projectile pass through")]
-        public int health = 1;
+        public int health;
 
         [Tooltip("What tower was the projectile fired from")]
         public Tower firedFrom = null;

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7b1b1b864cdfa24789cd457a615b131, type: 3}
-  m_Name: Sunflower upgrade 1
+  m_Name: Sturdy Peas
   m_EditorClassIdentifier: 
   cost: 0
-  path: 0
-  rangeUpgrade: 90
+  path: 1
+  rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0
+  projectileHealthUpgrade: 1

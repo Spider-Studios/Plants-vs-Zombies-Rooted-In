@@ -15,5 +15,6 @@ MonoBehaviour:
   cost: 0
   path: 1
   rangeUpgrade: 10
-  damageUpgrade: 5
+  damageUpgrade: 0
   attackSpeedUpgrade: 0
+  projectileHealthUpgrade: 0

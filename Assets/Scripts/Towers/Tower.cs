@@ -11,14 +11,18 @@ namespace PvZRI.Towers
         public int cost;
 
         [Space]
+        [Header("Attacking")]
         public float range = 1;
         public float timeBetweenAttacks = 1;
         float timeSinceLastAttack;
 
         [Space]
+        [Header("Projectile")]
         public GameObject projectile = null;
         public float damage;
         public float projectileSpeed;
+        [Tooltip("How many zombies can the projectile pass through")]
+        public int projectileHealth;
         public Transform projectileSpawn = null;
 
         [SerializeField]
@@ -27,6 +31,7 @@ namespace PvZRI.Towers
         public CanBePlacedOn canBePlacedOn;
 
         [Space]
+        [Header("Upgrades")]
         public Upgrade[] upgradePath1;
         public Upgrade[] upgradePath2;
 
@@ -99,6 +104,7 @@ namespace PvZRI.Towers
                 GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
                 shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
                 shot.GetComponent<Projectile>().damage = damage;
+                shot.GetComponent<Projectile>().health = projectileHealth;
                 shot.GetComponent<Projectile>().firedFrom = this;
             }
         }

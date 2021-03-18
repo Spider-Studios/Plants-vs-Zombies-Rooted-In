@@ -16,4 +16,5 @@ MonoBehaviour:
   path: 2
   rangeUpgrade: 0
   damageUpgrade: 0
-  attackSpeedUpgrade: 2
+  attackSpeedUpgrade: 1
+  projectileHealthUpgrade: 0
