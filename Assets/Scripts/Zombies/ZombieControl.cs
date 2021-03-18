@@ -60,8 +60,14 @@ namespace PvZRI.Zombies
         {
             if (other.gameObject.tag == ("House"))
             {
-                Destroy(gameObject);
                 brainsTracker.Minushealth(damageToPlayer);
+                Destroy(gameObject);
+                if (brainsTracker.brains < 0)
+                {
+                    brainsTracker.brains = 0;
+                }
+               
+                
             }
         }
     }

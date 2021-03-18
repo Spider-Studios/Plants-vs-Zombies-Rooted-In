@@ -7,10 +7,20 @@ public class BrainsTracker : MonoBehaviour
 {
     public int brains = 0;
     public Text brainsDisplay;
+    public GameObject startButton;
+    public GameObject spawnPoint;
+    public GameObject gameOver;
 
     private void Update()
     {
         brainsDisplay.text = "Brains: " + brains;
+        if (brains <= 0)
+        {
+            gameOver.SetActive(true);
+            Destroy(startButton);
+            Destroy(spawnPoint);
+            
+        }
     }
 
 
@@ -19,7 +29,6 @@ public class BrainsTracker : MonoBehaviour
         brains -= amount;
     }
 
-   
     }
 
 
