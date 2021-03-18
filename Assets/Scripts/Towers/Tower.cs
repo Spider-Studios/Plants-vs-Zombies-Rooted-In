@@ -17,12 +17,21 @@ namespace PvZRI.Towers
 
         [Space]
         public GameObject projectile = null;
+        public float damage;
+        public float projectileSpeed;
         public Transform projectileSpawn = null;
 
         [SerializeField]
         public enum CanBePlacedOn { Grass, Water, Track };
         [Space]
         public CanBePlacedOn canBePlacedOn;
+
+        [Space]
+        public Upgrade[] upgradePath1;
+        public Upgrade[] upgradePath2;
+
+        public int path1Purchased;
+        public int path2Purchased;
 
         public int killCount = 0;
 
@@ -40,10 +49,8 @@ namespace PvZRI.Towers
         void Start()
         {
             sightRange = transform.Find("Sight Range").GetComponent<CircleCollider2D>();
-            sightRange.radius = range;
 
             rangeDisplay = sightRange.transform.GetChild(0).gameObject;
-            rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
 
             selectTower = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
         }
@@ -64,6 +71,8 @@ namespace PvZRI.Towers
                 rangeDisplay.SetActive(false);
             }
 
+            sightRange.radius = range;
+            rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
         }
 
         private void LookAtTargets()
@@ -88,10 +97,11 @@ namespace PvZRI.Towers
             {
                 timeSinceLastAttack = Time.time;
                 GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
-                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed;
+                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
+                shot.GetComponent<Projectile>().damage = damage;
+                shot.GetComponent<Projectile>().firedFrom = this;
             }
         }
-
 
         private void OnMouseOver()
         {
