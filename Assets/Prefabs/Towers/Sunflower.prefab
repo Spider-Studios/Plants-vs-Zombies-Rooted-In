@@ -91,5 +91,17 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6085887496486104741, guid: e4e789a50fa386e4ca84286a8440e8b7,
+        type: 3}
+      propertyPath: upgradePath1.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 77de79e7b819fab438bed914798bdd71,
+        type: 2}
+    - target: {fileID: 6085887496486104741, guid: e4e789a50fa386e4ca84286a8440e8b7,
+        type: 3}
+      propertyPath: upgradePath2.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 63cbb506cd3e2bf48900b3a91a3d5ad3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e789a50fa386e4ca84286a8440e8b7, type: 3}
