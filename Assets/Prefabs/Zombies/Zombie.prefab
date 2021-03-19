@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   moveSpeed: 2
-  health: 100
+  health: 5
   hasBeenHit: 0
   colourTimer: 0.09
   reward: 2
