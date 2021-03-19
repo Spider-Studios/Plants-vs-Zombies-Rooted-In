@@ -13,8 +13,11 @@ namespace PvZRI.Zombies
         private int waypointIndex = 0;
 
         public int health = 0;
+        public bool hasBeenHit = false;
+        public float colourTimer = 0;
         public int reward;
         public int damageToPlayer;
+
         SunTracker sunTracker;
         BrainsTracker brainsTracker;
 
@@ -39,7 +42,16 @@ namespace PvZRI.Zombies
             {
                 Destroy(gameObject);
                 sunTracker.AddSun(reward);
-            }  
+            }
+
+            if (hasBeenHit == true)
+            {
+                StartCoroutine(timer());
+            }
+            else 
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
 
         public void move()
@@ -47,7 +59,6 @@ namespace PvZRI.Zombies
             if (waypointIndex <= waypoints.Length - 1)
             {
                 transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-
                 Vector2 lookat = transform.right = -waypoints[waypointIndex].transform.position - -transform.position;
 
                 if (transform.position == waypoints[waypointIndex].transform.position)
@@ -56,6 +67,14 @@ namespace PvZRI.Zombies
                 }
             }
         }
+
+        public IEnumerator timer()
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(colourTimer);
+            hasBeenHit = false;
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.tag == ("House"))
@@ -66,8 +85,6 @@ namespace PvZRI.Zombies
                 {
                     brainsTracker.brains = 0;
                 }
-               
-                
             }
         }
     }

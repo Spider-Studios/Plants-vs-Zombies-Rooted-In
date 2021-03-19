@@ -33,6 +33,9 @@ namespace PvZRI.Towers
                 other.GetComponent<ZombieControl>().health -= (int)damage;
 
                 health--;
+
+                if(other.GetComponent<SpriteRenderer>().color == Color.white)
+                other.GetComponent<ZombieControl>().hasBeenHit = true;
             }
         }
     }
