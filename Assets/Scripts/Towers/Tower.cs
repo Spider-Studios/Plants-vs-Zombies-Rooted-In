@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PvZRI.Towers
 {
@@ -33,10 +34,8 @@ namespace PvZRI.Towers
         [Space]
         [Header("Upgrades")]
         public Upgrade[] upgradePath1;
-        public Upgrade[] upgradePath2;
 
         public int path1Purchased;
-        public int path2Purchased;
 
         public int killCount = 0;
 

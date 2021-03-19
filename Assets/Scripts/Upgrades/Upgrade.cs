@@ -6,28 +6,42 @@ using PvZRI.Towers;
 public class Upgrade : ScriptableObject
 {
     public int cost;
-    [Range(1,2)]
-    public int path;
+    //[Range(1,2)]
+    //public int path;
     public float rangeUpgrade;
     public float damageUpgrade;
     public float attackSpeedUpgrade;
+    public float projectileSpeedUpgrade;
     public int projectileHealthUpgrade;
 
     public void AddUpgrades()
     {
-        Tower towerToUpgrade = SelectTower.instance.selected;
-        towerToUpgrade.range += rangeUpgrade;
-        towerToUpgrade.damage += damageUpgrade;
-        towerToUpgrade.timeBetweenAttacks += attackSpeedUpgrade;
-        towerToUpgrade.projectileHealth += projectileHealthUpgrade;
-
-        if(path == 1)
+        SunTracker sunTracker = SunTracker.instance;
+        if (sunTracker.HaveEnoughSun(cost))
         {
+            sunTracker.MinusSun(cost);
+
+            Tower towerToUpgrade = SelectTower.instance.selected;
+            towerToUpgrade.range += rangeUpgrade;
+            towerToUpgrade.damage += damageUpgrade;
+            towerToUpgrade.timeBetweenAttacks += attackSpeedUpgrade;
+            towerToUpgrade.projectileHealth += projectileHealthUpgrade;
+            towerToUpgrade.projectileSpeed += projectileSpeedUpgrade;
+
             towerToUpgrade.path1Purchased++;
         }
         else
         {
-            towerToUpgrade.path2Purchased++;
+            Debug.Log("not enough sun");  
         }
+
+        //if(path == 1)
+        //{
+        //    towerToUpgrade.path1Purchased++;
+        //}
+        //else
+        //{
+        //    towerToUpgrade.path2Purchased++;
+        //}
     }
 }

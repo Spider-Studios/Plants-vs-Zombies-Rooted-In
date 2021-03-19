@@ -5,10 +5,26 @@ using UnityEngine.UI;
 
 public class SunTracker : MonoBehaviour
 {
+    
+    #region Singleton
+    public static SunTracker instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of sun tracker found");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
     public int sun = 0;
     
     public Text sunDisplay;
 
+    
     private void Update()
     {
         sunDisplay.text = "Sun: " + sun;
