@@ -34,14 +34,5 @@ public class Upgrade : ScriptableObject
         {
             Debug.Log("not enough sun");  
         }
-
-        //if(path == 1)
-        //{
-        //    towerToUpgrade.path1Purchased++;
-        //}
-        //else
-        //{
-        //    towerToUpgrade.path2Purchased++;
-        //}
     }
 }

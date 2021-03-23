@@ -27,18 +27,20 @@ namespace PvZRI.Interaction
 
         public GameObject selectedPanel = null;
 
-        public GameObject upgrade1;
-       // GameObject upgrade2;
+        public GameObject upgrade1, upgrade2, upgrade3, upgrade4;
+        // GameObject upgrade2;
 
         void Start()
         {
-
             upgrade1 = selectedPanel.transform.Find("Upgrade 1").gameObject;
+            upgrade2 = selectedPanel.transform.Find("Upgrade 2").gameObject;
+            upgrade3 = selectedPanel.transform.Find("Upgrade 3").gameObject;
+            upgrade4 = selectedPanel.transform.Find("Upgrade 4").gameObject;
         }
-        
+
         void Update()
         {
-           if(Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1))
             {
                 if (selected != null)
                 {
@@ -48,27 +50,16 @@ namespace PvZRI.Interaction
 
             if (selected != null)
             {
-                print(selected.path1Purchased);
                 //set the buttons text to the next upgrade
-                if (selected.path1Purchased != selected.upgradePath1.Length)
-                {
-                    upgrade1.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[selected.path1Purchased].name + "\n Cost: " + selected.upgradePath1[selected.path1Purchased].cost;
-                }
-                else
-                {
-                    upgrade1.GetComponent<Button>().interactable = false;
-                }
+                upgrade1.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[0].name + "\n Cost: " + selected.upgradePath1[0].cost;
+                upgrade2.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[1].name + "\n Cost: " + selected.upgradePath1[1].cost;
+                upgrade3.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[2].name + "\n Cost: " + selected.upgradePath1[2].cost;
+                upgrade4.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[3].name + "\n Cost: " + selected.upgradePath1[3].cost;
             }
         }
 
         public void ShowSelectedPanel()
         {
-            //find the upgrade buttons and remove their click events
-            upgrade1.GetComponent<Button>().onClick.RemoveAllListeners();
-            
-           // upgrade2 = selectedPanel.transform.Find("Upgrade 2").gameObject;
-           // upgrade2.GetComponent<Button>().onClick.RemoveAllListeners();
-
             //show the range of the selected tower
             selected.rangeDisplay.SetActive(true);
 
@@ -78,13 +69,33 @@ namespace PvZRI.Interaction
             //show the tower's name
             selectedPanel.transform.Find("Tower Name").GetComponent<Text>().text = selected.name;
             
-            //set what upgrade the buttons link to                     
-           // upgrade2.GetComponent<Button>().onClick.AddListener(selected.upgradePath2[selected.path2Purchased].AddUpgrades);
-            upgrade1.GetComponent<Button>().onClick.AddListener(selected.upgradePath1[selected.path1Purchased].AddUpgrades);
         }
 
         public void Button1Clicked()
         {
+            selected.upgradePath1[0].AddUpgrades();
+            upgrade1.GetComponent<Button>().interactable = false;
+            upgrade2.GetComponent<Button>().interactable = true;
+        }
+
+        public void Button2Clicked()
+        {
+            selected.upgradePath1[1].AddUpgrades();
+            upgrade2.GetComponent<Button>().interactable = false;
+            upgrade3.GetComponent<Button>().interactable = true;
+        }
+
+        public void Button3Clicked()
+        {
+            selected.upgradePath1[2].AddUpgrades();
+            upgrade3.GetComponent<Button>().interactable = false;
+            upgrade4.GetComponent<Button>().interactable = true;
+        }
+
+        public void Button4Clicked()
+        {
+            selected.upgradePath1[3].AddUpgrades();
+            upgrade4.GetComponent<Button>().interactable = false;
         }
 
         private void HideSelectedPanel()
