@@ -28,7 +28,6 @@ namespace PvZRI.Interaction
         public GameObject selectedPanel = null;
 
         public GameObject upgrade1, upgrade2, upgrade3, upgrade4;
-        // GameObject upgrade2;
 
         void Start()
         {
@@ -55,6 +54,41 @@ namespace PvZRI.Interaction
                 upgrade2.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[1].name + "\n Cost: " + selected.upgradePath1[1].cost;
                 upgrade3.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[2].name + "\n Cost: " + selected.upgradePath1[2].cost;
                 upgrade4.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[3].name + "\n Cost: " + selected.upgradePath1[3].cost;
+
+
+                switch (selected.path1Purchased)
+                {
+                    case 1:
+                        upgrade1.GetComponent<Button>().interactable = false;
+                        upgrade2.GetComponent<Button>().interactable = true;
+                        upgrade3.GetComponent<Button>().interactable = false;
+                        upgrade4.GetComponent<Button>().interactable = false;
+                        break;
+                    case 2:
+                        upgrade1.GetComponent<Button>().interactable = false;
+                        upgrade2.GetComponent<Button>().interactable = false;
+                        upgrade3.GetComponent<Button>().interactable = true;
+                        upgrade4.GetComponent<Button>().interactable = false;
+                        break;
+                    case 3:
+                        upgrade1.GetComponent<Button>().interactable = false;
+                        upgrade2.GetComponent<Button>().interactable = false;
+                        upgrade3.GetComponent<Button>().interactable = false;
+                        upgrade4.GetComponent<Button>().interactable = true;
+                        break;
+                    case 0:
+                        upgrade1.GetComponent<Button>().interactable = true;
+                        upgrade2.GetComponent<Button>().interactable = false;
+                        upgrade3.GetComponent<Button>().interactable = false;
+                        upgrade4.GetComponent<Button>().interactable = false;
+                        break;
+                    default:
+                        upgrade1.GetComponent<Button>().interactable = false;
+                        upgrade2.GetComponent<Button>().interactable = false;
+                        upgrade3.GetComponent<Button>().interactable = false;
+                        upgrade4.GetComponent<Button>().interactable = false;
+                        break;
+                }
             }
         }
 
@@ -74,28 +108,21 @@ namespace PvZRI.Interaction
         public void Button1Clicked()
         {
             selected.upgradePath1[0].AddUpgrades();
-            upgrade1.GetComponent<Button>().interactable = false;
-            upgrade2.GetComponent<Button>().interactable = true;
         }
 
         public void Button2Clicked()
         {
-            selected.upgradePath1[1].AddUpgrades();
-            upgrade2.GetComponent<Button>().interactable = false;
-            upgrade3.GetComponent<Button>().interactable = true;
+            selected.upgradePath1[1].AddUpgrades();            
         }
 
         public void Button3Clicked()
         {
             selected.upgradePath1[2].AddUpgrades();
-            upgrade3.GetComponent<Button>().interactable = false;
-            upgrade4.GetComponent<Button>().interactable = true;
         }
 
         public void Button4Clicked()
         {
             selected.upgradePath1[3].AddUpgrades();
-            upgrade4.GetComponent<Button>().interactable = false;
         }
 
         private void HideSelectedPanel()

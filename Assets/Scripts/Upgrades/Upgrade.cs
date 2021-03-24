@@ -6,8 +6,6 @@ using PvZRI.Towers;
 public class Upgrade : ScriptableObject
 {
     public int cost;
-    //[Range(1,2)]
-    //public int path;
     public float rangeUpgrade;
     public float damageUpgrade;
     public float attackSpeedUpgrade;
@@ -20,7 +18,6 @@ public class Upgrade : ScriptableObject
         if (sunTracker.HaveEnoughSun(cost))
         {
             sunTracker.MinusSun(cost);
-
             Tower towerToUpgrade = SelectTower.instance.selected;
             towerToUpgrade.range += rangeUpgrade;
             towerToUpgrade.damage += damageUpgrade;
