@@ -6,21 +6,19 @@ namespace PvZRI.Zombies
 {
     public class NewspaperZombie : ZombieControl
     {
-        private int waypointIndex = 0;
-
+        
+        // Start is called before the first frame update
         void Start()
         {
             GetWaypoints();
-            transform.position = waypoints[waypointIndex].transform.position;
         }
 
+        // Update is called once per frame
         void Update()
         {
-            move();
-
             if (health <= 5)
             {
-                moveSpeed = 3;
+                transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime, 3f, Input.GetAxis("Vertical") * Time.deltaTime);
             }
         }
     }

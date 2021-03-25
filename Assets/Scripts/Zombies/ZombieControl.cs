@@ -9,7 +9,7 @@ namespace PvZRI.Zombies
     {
         public GameObject[] waypoints;
         [SerializeField]
-        public float moveSpeed = 2f;
+        private float moveSpeed = 2f;
         private int waypointIndex = 0;
 
         public int health = 0;
