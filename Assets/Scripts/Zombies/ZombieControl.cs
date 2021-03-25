@@ -8,8 +8,7 @@ namespace PvZRI.Zombies
     public class ZombieControl : MonoBehaviour
     {
         public GameObject[] waypoints;
-        [SerializeField]
-        private float moveSpeed = 2f;
+        public float moveSpeed = 2f;
         private int waypointIndex = 0;
 
         public int health = 0;

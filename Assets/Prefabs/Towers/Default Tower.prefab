@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309764315857f86419a107e48ddb5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 50
   range: 20
   timeBetweenAttacks: 1
   projectile: {fileID: 2366004677586742330, guid: ffa6bb0d833fab54880b772e14df549f,

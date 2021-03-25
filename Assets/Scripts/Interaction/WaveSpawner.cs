@@ -10,6 +10,7 @@ public class Wave
     public float spawnInterval;
     public int reward;
 }
+
 public class WaveSpawner : MonoBehaviour
 {
     public Wave[] waves;
@@ -23,7 +24,6 @@ public class WaveSpawner : MonoBehaviour
     private int currentWaveNumber;
     private float nextSpawnTime;
     public Text currentWaveDisplay;
-
 
     private bool canSpawn = true;
     private void Update()
@@ -40,39 +40,24 @@ public class WaveSpawner : MonoBehaviour
             currentWaveNumber++;
             waveSpawner.SetActive(false);
             canSpawn = true;
-            
-
         }
     }
 
-    
-
     void SpawnWave()
     {
-
         startWaveButton.SetActive(false);
 
         if (canSpawn && nextSpawnTime < Time.time)
         {
-
-
             Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-
-           
-            
             Instantiate(currentWave.enemies[positionInWave], randomPoint.position, Quaternion.identity);
-
             positionInWave++;
-            
             nextSpawnTime = Time.time + currentWave.spawnInterval;
 
             if (positionInWave >= currentWave.enemies.Length)
             {
                 canSpawn = false;
-             
             }
         }
-
-    }
-        
+    }   
 }
