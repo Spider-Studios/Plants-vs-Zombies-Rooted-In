@@ -1653,8 +1653,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50423467}
-  m_LocalRotation: {x: 0.011491558, y: -0.35476488, z: 0.004410689, w: 0.93487453}
-  m_LocalPosition: {x: 7.1955214, y: -1.5812395, z: 1.3178887}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.204207, y: -1.7405281, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2874,6 +2874,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track Waypoints
       objectReference: {fileID: 0}
+    - target: {fileID: 4054848961673654267, guid: e1b7ed6f8cd33984bb16a01efb8ce014,
+        type: 3}
+      propertyPath: m_TagString
+      value: Waypoints
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b7ed6f8cd33984bb16a01efb8ce014, type: 3}
 --- !u!1 &1024586187
@@ -3551,6 +3556,11 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5299511599792877549, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 8.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5299511599792877550, guid: ef638432ba04f0447a22b86345bd1c48,
         type: 3}
       propertyPath: m_Name
@@ -3560,6 +3570,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600457023734, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 276.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600512577909, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 285.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef638432ba04f0447a22b86345bd1c48, type: 3}

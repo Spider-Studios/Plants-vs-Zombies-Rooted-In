@@ -2069,5 +2069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track Waypoints
       objectReference: {fileID: 0}
+    - target: {fileID: 4054848961673654267, guid: e1b7ed6f8cd33984bb16a01efb8ce014,
+        type: 3}
+      propertyPath: m_TagString
+      value: Waypoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b7ed6f8cd33984bb16a01efb8ce014, type: 3}
