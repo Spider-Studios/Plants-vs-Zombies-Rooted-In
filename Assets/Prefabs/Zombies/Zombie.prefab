@@ -115,7 +115,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e584cd43751bd44e8ed6c3d9c505701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  waypointParent: {fileID: 0}
   moveSpeed: 2
   health: 5
   hasBeenHit: 0

@@ -8,7 +8,9 @@ namespace PvZRI.Zombies
     public class ZombieControl : MonoBehaviour
     {
         public GameObject[] waypoints;
-        public float moveSpeed = 2f;
+        public GameObject waypointParent;
+        [SerializeField]
+        private float moveSpeed = 2f;
         private int waypointIndex = 0;
 
         public int health = 0;
@@ -30,7 +32,13 @@ namespace PvZRI.Zombies
 
         public void GetWaypoints()
         {
-            waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+            waypointParent = GameObject.FindGameObjectWithTag("Waypoints");
+            for (int i = 0; i < waypointParent.transform.childCount; i++)
+            {
+                waypoints[i] = waypointParent.transform.GetChild(i).gameObject;
+            }
+            //waypointParent.transform.GetChild(i);
+            //waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         }
 
         private void Update()

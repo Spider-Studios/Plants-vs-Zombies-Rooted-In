@@ -59,6 +59,14 @@ namespace PvZRI.Interaction
                 switch (selected.path1Purchased)
                 {
                     case 1:
+                        //if (sunTracker.sun >= selected.upgradePath1[0].cost)
+                        //{
+                        //    upgrade1.GetComponent<Button>().interactable = true;
+                        //}
+                        //else
+                        //{
+                        //    upgrade1.GetComponent<Button>().interactable = false;
+                        //}
                         upgrade1.GetComponent<Button>().interactable = false;
                         upgrade2.GetComponent<Button>().interactable = true;
                         upgrade3.GetComponent<Button>().interactable = false;
