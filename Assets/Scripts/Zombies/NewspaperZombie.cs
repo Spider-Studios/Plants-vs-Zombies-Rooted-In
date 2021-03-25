@@ -16,7 +16,10 @@ namespace PvZRI.Zombies
         // Update is called once per frame
         void Update()
         {
-            //if health = X then increase speed
+            if (health <= 5)
+            {
+                transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime, 3f, Input.GetAxis("Vertical") * Time.deltaTime);
+            }
         }
     }
 }
