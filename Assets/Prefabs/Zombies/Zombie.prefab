@@ -132,7 +132,7 @@ MonoBehaviour:
   health: 5
   hasBeenHit: 0
   colourTimer: 0.09
-  reward: 2
+  reward: 5
   damageToPlayer: 5
 --- !u!95 &431716176
 Animator:
