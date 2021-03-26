@@ -43,7 +43,7 @@ namespace PvZRI.Interaction
                 {
                     sprite.GetComponent<SpriteRenderer>().color = Color.white;
                     disp.GetComponent<SpriteRenderer>().color = new Color(161,161,161,0.5f);
-                    if (Input.GetMouseButtonDown(1))
+                    if (Input.GetMouseButtonDown(0))
                     {
                         PlaceTower();
                     }
