@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
+  waypointParent: {fileID: 0}
   moveSpeed: 2
   health: 10
   hasBeenHit: 0
   colourTimer: 0.09
-  reward: 75
+  reward: 15
   damageToPlayer: 10
 --- !u!1001 &6929174430790041727
 PrefabInstance:

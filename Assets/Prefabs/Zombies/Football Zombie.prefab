@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 7831621989952849195, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
         type: 3}
       propertyPath: reward
-      value: 75
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7831621989952849195, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
         type: 3}
@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
         type: 3}
       propertyPath: m_Name
-      value: Newspaper Zombie 1
+      value: Football Zombie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
