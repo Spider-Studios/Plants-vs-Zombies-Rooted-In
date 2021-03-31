@@ -33,6 +33,10 @@ namespace PvZRI.Towers
             if (other.gameObject.tag == ("Zombie"))
             {
                 other.GetComponent<ZombieControl>().health -= (int)damage;
+                if(other.GetComponent<ZombieControl>().health <= 0)
+                {
+                    firedFrom.killCount++;
+                }
 
                 health--;
 

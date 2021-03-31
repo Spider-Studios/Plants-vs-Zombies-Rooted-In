@@ -49,6 +49,8 @@ namespace PvZRI.Interaction
 
             if (selected != null)
             {
+
+                selectedPanel.transform.Find("Kill Count").GetComponent<Text>().text = "Zombies Killed: " + selected.killCount;
                 //set the buttons text to the next upgrade
                 upgrade1.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[0].name + "\n Cost: " + selected.upgradePath1[0].cost;
                 upgrade2.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[1].name + "\n Cost: " + selected.upgradePath1[1].cost;
