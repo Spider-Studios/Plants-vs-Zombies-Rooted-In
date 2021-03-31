@@ -24,7 +24,7 @@ namespace PvZRI.Interaction
 
         void Update()
         {
-           // print(CheckWhatMouseIsOver());
+            // print(CheckWhatMouseIsOver());
             if (sprite != null)
             {
                 if (sprite.active)
@@ -42,7 +42,7 @@ namespace PvZRI.Interaction
                 if (CheckWhatMouseIsOver() == towerToSpawn.canBePlacedOn.ToString())
                 {
                     sprite.GetComponent<SpriteRenderer>().color = Color.white;
-                    disp.GetComponent<SpriteRenderer>().color = new Color(161,161,161,0.5f);
+                    disp.GetComponent<SpriteRenderer>().color = new Color(161, 161, 161, 0.5f);
                     if (Input.GetMouseButtonDown(0))
                     {
                         PlaceTower();
@@ -75,13 +75,14 @@ namespace PvZRI.Interaction
         }
 
         public void PlaceTower()
-        {            
-                sunTracker.MinusSun(towerToSpawn.cost);
-                showSprite = false;
-                Destroy(sprite);
-                Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                spawnPosition.z = -6f;
-                Instantiate(towerToSpawn, spawnPosition, Quaternion.identity);
+        {
+            sunTracker.MinusSun(towerToSpawn.cost);
+            showSprite = false;
+            Destroy(sprite);
+            Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            spawnPosition.z = -6f;
+            Tower t = Instantiate(towerToSpawn, spawnPosition, Quaternion.identity);
+            t.name = t.name.Replace("(Clone)", "");
         }
 
         public string CheckWhatMouseIsOver()
