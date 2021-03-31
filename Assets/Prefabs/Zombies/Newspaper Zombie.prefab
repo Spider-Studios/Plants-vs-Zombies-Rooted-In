@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   waypointParent: {fileID: 0}
+  currentSpeed: 2
   moveSpeed: 2
   health: 10
   hasBeenHit: 0
   colourTimer: 0.09
+  isSlowed: 0
+  slowTimer: 0
   reward: 15
   damageToPlayer: 10
+  zombieHitSound: {fileID: 0}
 --- !u!1001 &6929174430790041727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,6 +31,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4617812170248785679, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7831621989952849194, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
         type: 3}
       propertyPath: m_RootOrder
@@ -89,6 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7831621989952849195, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
+    - {fileID: -70652344059559247, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
 --- !u!1 &902652705648067920 stripped
 GameObject:
