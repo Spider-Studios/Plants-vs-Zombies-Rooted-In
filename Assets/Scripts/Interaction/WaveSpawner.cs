@@ -52,7 +52,7 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    void SpawnWave()
+        void SpawnWave()
     {
         startWaveButton.SetActive(false);
 
