@@ -26,7 +26,7 @@ namespace PvZRI.Towers
         public int projectileHealth;
         public float slowAmount = 0;
         public float slowTime;
-        public Transform projectileSpawn = null;
+        public Transform[] projectileSpawn = new Transform[1];
 
         [SerializeField]
         public enum CanBePlacedOn { Grass, Water, Track };
@@ -59,6 +59,8 @@ namespace PvZRI.Towers
             rangeDisplay = sightRange.transform.GetChild(0).gameObject;
 
             selectTower = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
+
+               
         }
 
         void Update()
@@ -104,14 +106,17 @@ namespace PvZRI.Towers
             if (Time.time - timeSinceLastAttack > 1 / timeBetweenAttacks)
             {
                 timeSinceLastAttack = Time.time;
-                GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
-                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
-                Projectile proj = shot.GetComponent<Projectile>();
-                proj.damage = damage;
-                proj.health = projectileHealth;
-                proj.slow = slowAmount;
-                proj.slowTime = slowTime;
-                proj.firedFrom = this;
+                for (int i = 0; i < projectileSpawn.Length; i++)
+                {
+                    GameObject shot = Instantiate(projectile, projectileSpawn[i].position, Quaternion.identity);
+                    shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
+                    Projectile proj = shot.GetComponent<Projectile>();
+                    proj.damage = damage;
+                    proj.health = projectileHealth;
+                    proj.slow = slowAmount;
+                    proj.slowTime = slowTime;
+                    proj.firedFrom = this;
+                }
             }
         }
 
