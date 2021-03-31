@@ -10,6 +10,8 @@ public class Upgrade : ScriptableObject
     public float damageUpgrade;
     public float attackSpeedUpgrade;
     public float projectileSpeedUpgrade;
+    public float projectileSlowUpgrade;
+    public float projectileSlowDurationUpgrade;
     public int projectileHealthUpgrade;
 
     public void AddUpgrades()
@@ -24,6 +26,8 @@ public class Upgrade : ScriptableObject
             towerToUpgrade.timeBetweenAttacks += attackSpeedUpgrade;
             towerToUpgrade.projectileHealth += projectileHealthUpgrade;
             towerToUpgrade.projectileSpeed += projectileSpeedUpgrade;
+            towerToUpgrade.slowAmount += projectileSlowUpgrade;
+            towerToUpgrade.slowTime += projectileSlowDurationUpgrade;
 
             towerToUpgrade.path1Purchased++;
         }

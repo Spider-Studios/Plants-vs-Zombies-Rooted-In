@@ -17,4 +17,6 @@ MonoBehaviour:
   damageUpgrade: 0
   attackSpeedUpgrade: 0
   projectileSpeedUpgrade: 0
+  projectileSlowUpgrade: 0
+  projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
