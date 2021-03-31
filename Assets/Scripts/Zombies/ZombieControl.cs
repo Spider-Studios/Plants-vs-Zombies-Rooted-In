@@ -21,6 +21,7 @@ namespace PvZRI.Zombies
         public float slowTimer;
         public int reward;
         public int damageToPlayer;
+        public AudioSource zombieHitSound;
 
         SunTracker sunTracker;
         BrainsTracker brainsTracker;
@@ -57,6 +58,7 @@ namespace PvZRI.Zombies
             if (hasBeenHit == true)
             {
                 StartCoroutine(ColourTimer());
+                zombieHitSound.Play();
             }
             else 
             {
