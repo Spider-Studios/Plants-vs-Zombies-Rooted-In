@@ -18,6 +18,8 @@ public class WaveSpawner : MonoBehaviour
     public GameObject startWaveButton;
     public GameObject waveSpawner;
     public SunTracker sunTracker;
+    public AudioSource sunSound;
+    public GameObject brainSound;
 
     private int positionInWave = 0;
     private Wave currentWave;
@@ -26,20 +28,27 @@ public class WaveSpawner : MonoBehaviour
     public Text currentWaveDisplay;
 
     private bool canSpawn = true;
+    public bool isSpawning = false; 
+
     private void Update()
     {
-        currentWave = waves[currentWaveNumber];
-        currentWaveDisplay.text = "Wave: " + currentWave.waveName;
-        SpawnWave();
-        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Zombie");
-        if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber+1 != waves.Length)
+        if (isSpawning == true)
         {
-            positionInWave = 0;
-            startWaveButton.SetActive(true);
-            sunTracker.AddSun(currentWave.reward);
-            currentWaveNumber++;
-            waveSpawner.SetActive(false);
-            canSpawn = true;
+            currentWave = waves[currentWaveNumber];
+            currentWaveDisplay.text = "Wave: " + currentWave.waveName;
+            SpawnWave();
+            GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Zombie");
+            if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
+            {
+                positionInWave = 0;
+                startWaveButton.SetActive(true);
+                sunTracker.AddSun(currentWave.reward);
+                currentWaveNumber++;
+                isSpawning = false;
+                canSpawn = true;
+                sunSound.Play();
+                brainSound.SetActive(false);
+            }
         }
     }
 
@@ -59,5 +68,11 @@ public class WaveSpawner : MonoBehaviour
                 canSpawn = false;
             }
         }
-    }   
+    }
+
+    public void setSpawning()
+    {
+        isSpawning = !isSpawning;
+    
+    }
 }
