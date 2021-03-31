@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309764315857f86419a107e48ddb5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 75
   range: 5
   timeBetweenAttacks: 1
   projectile: {fileID: 2366004677586742330, guid: ffa6bb0d833fab54880b772e14df549f,
@@ -114,9 +114,9 @@ MonoBehaviour:
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: f8a990cfc2a6a8c47930ac4d362e9729, type: 2}
-  - {fileID: 11400000, guid: 1629cc983c1acad48a70f8016ce4f9b8, type: 2}
-  - {fileID: 11400000, guid: 6b8e5634f1c2e5141bb1c85a87a6d1ff, type: 2}
-  - {fileID: 11400000, guid: e5625f19e09ba6c428c52eddf4060f6d, type: 2}
+  - {fileID: 11400000, guid: f5d338c102871de4f99330fee845d944, type: 2}
+  - {fileID: 11400000, guid: 26a7bd8cb4977ab46a1cebcf1a4b60cc, type: 2}
+  - {fileID: 11400000, guid: e88839f7e65ead843bc025d8b93978dd, type: 2}
   path1Purchased: 0
   killCount: 0
   targets: []
