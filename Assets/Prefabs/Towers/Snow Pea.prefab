@@ -110,7 +110,8 @@ MonoBehaviour:
   projectileHealth: 1
   slowAmount: 1
   slowTime: 2
-  projectileSpawn: {fileID: 6683730700520231442}
+  projectileSpawn:
+  - {fileID: 6683730700520231442}
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: f8a990cfc2a6a8c47930ac4d362e9729, type: 2}

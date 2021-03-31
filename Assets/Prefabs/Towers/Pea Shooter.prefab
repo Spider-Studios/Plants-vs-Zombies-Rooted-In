@@ -114,7 +114,7 @@ MonoBehaviour:
   slowAmount: 0
   slowTime: 0
   projectileSpawn:
-  - {fileID: 0}
+  - {fileID: 6683730700520231442}
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: 8f0d0ed91e0951846ba0be9d6fdc2a85, type: 2}
