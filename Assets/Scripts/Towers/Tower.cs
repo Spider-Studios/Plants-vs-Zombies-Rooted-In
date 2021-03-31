@@ -24,6 +24,8 @@ namespace PvZRI.Towers
         public float projectileSpeed;
         [Tooltip("How many zombies can the projectile pass through")]
         public int projectileHealth;
+        public float slowAmount = 0;
+        public float slowTime;
         public Transform projectileSpawn = null;
 
         [SerializeField]
@@ -75,6 +77,8 @@ namespace PvZRI.Towers
                 rangeDisplay.SetActive(false);
             }
 
+            
+
             sightRange.radius = range;
             rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
         }
@@ -102,9 +106,12 @@ namespace PvZRI.Towers
                 timeSinceLastAttack = Time.time;
                 GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
                 shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
-                shot.GetComponent<Projectile>().damage = damage;
-                shot.GetComponent<Projectile>().health = projectileHealth;
-                shot.GetComponent<Projectile>().firedFrom = this;
+                Projectile proj = shot.GetComponent<Projectile>();
+                proj.damage = damage;
+                proj.health = projectileHealth;
+                proj.slow = slowAmount;
+                proj.slowTime = slowTime;
+                proj.firedFrom = this;
             }
         }
 

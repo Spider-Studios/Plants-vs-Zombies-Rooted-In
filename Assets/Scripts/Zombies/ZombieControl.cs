@@ -9,12 +9,16 @@ namespace PvZRI.Zombies
     {
         public GameObject[] waypoints;
         public GameObject waypointParent;
+        [HideInInspector]
+        public float currentSpeed = 2f;
         public float moveSpeed = 2f;
         private int waypointIndex = 0;
 
         public int health = 0;
         public bool hasBeenHit = false;
         public float colourTimer = 0;
+        public bool isSlowed = false;
+        public float slowTimer;
         public int reward;
         public int damageToPlayer;
 
@@ -52,11 +56,21 @@ namespace PvZRI.Zombies
 
             if (hasBeenHit == true)
             {
-                StartCoroutine(timer());
+                StartCoroutine(ColourTimer());
             }
             else 
             {
                 GetComponent<SpriteRenderer>().color = Color.white;
+            }
+
+            if(isSlowed)
+            {
+                StartCoroutine(SlowTimer());
+                GetComponent<SpriteRenderer>().color = Color.cyan;
+            }
+            else
+            {
+                currentSpeed = moveSpeed;
             }
         }
 
@@ -64,7 +78,7 @@ namespace PvZRI.Zombies
         {
             if (waypointIndex <= waypoints.Length - 1)
             {
-                transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, currentSpeed * Time.deltaTime);
                 Vector2 lookat = transform.right = -waypoints[waypointIndex].transform.position - -transform.position;
 
                 if (transform.position == waypoints[waypointIndex].transform.position)
@@ -74,11 +88,18 @@ namespace PvZRI.Zombies
             }
         }
 
-        public IEnumerator timer()
+        public IEnumerator ColourTimer()
         {
             GetComponent<SpriteRenderer>().color = Color.red;
             yield return new WaitForSeconds(colourTimer);
             hasBeenHit = false;
+        }
+
+        public IEnumerator SlowTimer()
+        {
+            yield return new WaitForSeconds(slowTimer);
+            isSlowed = false;
+            slowTimer = 0;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

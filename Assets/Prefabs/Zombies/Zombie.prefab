@@ -131,12 +131,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   waypointParent: {fileID: 0}
+  currentSpeed: 2
   moveSpeed: 2
   health: 5
   hasBeenHit: 0
   colourTimer: 0.09
+  isSlowed: 0
   reward: 5
   damageToPlayer: 5
+  AC: {fileID: 0}
+  AC2: {fileID: 0}
 --- !u!95 &431716176
 Animator:
   serializedVersion: 3
