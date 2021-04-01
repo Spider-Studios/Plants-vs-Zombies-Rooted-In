@@ -21,6 +21,8 @@ public class WaveSpawner : MonoBehaviour
     public SunTracker sunTracker;
     public AudioSource sunSound;
     public GameObject brainSound;
+    public GameObject dayTimeSound;
+    public GameObject idleSound;
 
     private int positionInWave = 0;
     private Wave currentWave;
@@ -51,6 +53,8 @@ public class WaveSpawner : MonoBehaviour
                 canSpawn = true;
                 sunSound.Play();
                 brainSound.SetActive(false);
+                idleSound.SetActive(true);
+                dayTimeSound.SetActive(false);
 
                 //add the sun rewards for towers that have them
                 foreach(Tower tower in FindObjectsOfType<Tower>())
@@ -67,6 +71,8 @@ public class WaveSpawner : MonoBehaviour
         void SpawnWave()
     {
         startWaveButton.SetActive(false);
+        idleSound.SetActive(false);
+        dayTimeSound.SetActive(true);
 
         if (canSpawn && nextSpawnTime < Time.time)
         {
