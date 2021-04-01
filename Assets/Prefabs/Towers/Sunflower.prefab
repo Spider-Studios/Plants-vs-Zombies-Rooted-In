@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 727369761}
   - component: {fileID: 6852047012922348482}
   m_Layer: 0
-  m_Name: Pea Shooter
+  m_Name: Sunflower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 810939519633661078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.84, y: 0.41, z: -0.12}
-  m_LocalScale: {x: 0.17283525, y: 0.17283525, z: 0.17283526}
+  m_LocalScale: {x: 0.39720994, y: 0.39720994, z: 0.39720997}
   m_Children:
   - {fileID: 6683730700520231442}
   - {fileID: 6349149538713068641}
@@ -78,8 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3171280387414100904, guid: 0f3362fd4eb277941b89fb1f43c9ac0a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4fbe8b7c209c954ba1647285fd38a8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,24 +102,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 100
-  range: 20
-  timeBetweenAttacks: 1
-  projectile: {fileID: 2366004677586742330, guid: ffa6bb0d833fab54880b772e14df549f,
-    type: 3}
-  damage: 1
-  projectileSpeed: 20
-  projectileHealth: 1
+  range: 2
+  timeBetweenAttacks: 0
+  projectile: {fileID: 0}
+  damage: 0
+  projectileSpeed: 0
+  projectileHealth: 0
   slowAmount: 0
   slowTime: 0
   projectileSpawn:
   - {fileID: 6683730700520231442}
-  sunReward: 0
+  sunReward: 50
   canBePlacedOn: 0
   upgradePath1:
-  - {fileID: 11400000, guid: 8f0d0ed91e0951846ba0be9d6fdc2a85, type: 2}
-  - {fileID: 11400000, guid: 1629cc983c1acad48a70f8016ce4f9b8, type: 2}
-  - {fileID: 11400000, guid: 6b8e5634f1c2e5141bb1c85a87a6d1ff, type: 2}
-  - {fileID: 11400000, guid: e5625f19e09ba6c428c52eddf4060f6d, type: 2}
+  - {fileID: 11400000, guid: 56d57acc192a7f44bb8cdbc1a461687d, type: 2}
+  - {fileID: 11400000, guid: 792cb29d476314d46952708a52bf5f1f, type: 2}
+  - {fileID: 11400000, guid: 6624db1544db7004c9ec5e76b8c586ce, type: 2}
+  - {fileID: 11400000, guid: b73e772bcaa5af54891ad15b0544d476, type: 2}
   path1Purchased: 0
   killCount: 0
   targets: []
@@ -135,12 +133,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.94, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.55
+  m_Radius: 1.7749999
 --- !u!50 &7500076193045099027
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +168,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810939519633661078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7bc56238eb1bab24e944f456658a01c5, type: 2}
   m_CullingMode: 0
@@ -201,7 +199,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.32521462
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -301,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863764386778993063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.78, y: 0.15, z: 0}
+  m_LocalPosition: {x: -0.09, y: 0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4425373851766026035}
@@ -333,8 +331,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8974253829390723509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.85, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.635, y: 3.635, z: 3.635}
   m_Children:
   - {fileID: 6948119047624533806}
   m_Father: {fileID: 4425373851766026035}

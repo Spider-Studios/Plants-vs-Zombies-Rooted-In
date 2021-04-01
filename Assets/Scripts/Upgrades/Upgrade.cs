@@ -6,13 +6,19 @@ using PvZRI.Towers;
 public class Upgrade : ScriptableObject
 {
     public int cost;
+    [Space]
     public float rangeUpgrade;
     public float damageUpgrade;
     public float attackSpeedUpgrade;
+    [Space]
     public float projectileSpeedUpgrade;
+    [Space]
     public float projectileSlowUpgrade;
     public float projectileSlowDurationUpgrade;
+    [Space]
     public int projectileHealthUpgrade;
+    [Space]
+    public int sunRewardUpgrade;
 
     public void AddUpgrades()
     {
@@ -28,6 +34,7 @@ public class Upgrade : ScriptableObject
             towerToUpgrade.projectileSpeed += projectileSpeedUpgrade;
             towerToUpgrade.slowAmount += projectileSlowUpgrade;
             towerToUpgrade.slowTime += projectileSlowDurationUpgrade;
+            towerToUpgrade.sunReward += sunRewardUpgrade;
 
             towerToUpgrade.path1Purchased++;
         }

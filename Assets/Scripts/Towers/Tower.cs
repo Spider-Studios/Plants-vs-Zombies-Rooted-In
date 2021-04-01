@@ -28,6 +28,9 @@ namespace PvZRI.Towers
         public float slowTime;
         public Transform[] projectileSpawn = new Transform[1];
 
+        [Tooltip("Sun given at the end of each wave")]
+        public int sunReward = 0;
+
         [SerializeField]
         public enum CanBePlacedOn { Grass, Water, Track };
         [Space]

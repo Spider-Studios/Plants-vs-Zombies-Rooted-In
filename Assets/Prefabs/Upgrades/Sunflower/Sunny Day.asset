@@ -20,3 +20,4 @@ MonoBehaviour:
   projectileSlowUpgrade: 0
   projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
+  sunRewardUpgrade: 40

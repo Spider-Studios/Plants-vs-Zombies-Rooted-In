@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using PvZRI.Towers;
 
 [System.Serializable]
 
@@ -38,6 +39,8 @@ public class WaveSpawner : MonoBehaviour
             currentWaveDisplay.text = "Wave: " + currentWave.waveName;
             SpawnWave();
             GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Zombie");
+
+            //end of the wave
             if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
             {
                 positionInWave = 0;
@@ -48,6 +51,15 @@ public class WaveSpawner : MonoBehaviour
                 canSpawn = true;
                 sunSound.Play();
                 brainSound.SetActive(false);
+
+                //add the sun rewards for towers that have them
+                foreach(Tower tower in FindObjectsOfType<Tower>())
+                {
+                    if(tower.sunReward > 0)
+                    {
+                        sunTracker.AddSun(tower.sunReward);
+                    }
+                }
             }
         }
     }
