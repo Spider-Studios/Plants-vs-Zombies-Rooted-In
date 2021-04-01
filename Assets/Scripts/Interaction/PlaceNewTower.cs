@@ -61,6 +61,11 @@ namespace PvZRI.Interaction
             towerToSpawn = t;
             if (sunTracker.HaveEnoughSun(towerToSpawn.cost))
             {
+                //stops a bug where there can be multiple hover sprites
+                if(GameObject.Find("hover sprite"))
+                {
+                    Destroy(GameObject.Find("hover sprite"));
+                }
                 sprite = new GameObject("hover sprite");
                 sprite.AddComponent<SpriteRenderer>();
                 sprite.GetComponent<SpriteRenderer>().sprite = towerToSpawn.GetComponent<SpriteRenderer>().sprite;
