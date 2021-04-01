@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PvZRI.Zombies;
 
 namespace PvZRI.Towers
 {
@@ -93,8 +94,17 @@ namespace PvZRI.Towers
             //if the list is not empty
             if (targets.Count != 0)
             {
-                shootingAt = targets[0].transform;
-                //look at the first target
+                GameObject t = targets[0];
+                for (int i = 0; i < targets.Count; i++)
+                {
+                    //target the zombie that has moved the furthest
+                    if (t.GetComponent<ZombieControl>().distanceTravelled < targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                    {
+                        t = targets[i];
+                    }
+                }
+
+                shootingAt = t.transform;
 
                 Vector3 lookat = transform.right = shootingAt.position - transform.position;
                 lookat.z = 0;

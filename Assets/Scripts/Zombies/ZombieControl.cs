@@ -23,6 +23,9 @@ namespace PvZRI.Zombies
         public int damageToPlayer;
         public AudioSource zombieHitSound;
 
+        public float distanceTravelled = 0;
+        Vector3 previousPosition;
+
         SunTracker sunTracker;
         BrainsTracker brainsTracker;
 
@@ -32,6 +35,7 @@ namespace PvZRI.Zombies
             transform.position = waypoints[waypointIndex].transform.position;
             sunTracker = GameObject.Find("GameMaster").GetComponent<SunTracker>();
             brainsTracker = GameObject.Find("GameMaster").GetComponent<BrainsTracker>();
+            previousPosition = transform.position;
         }
 
         public void GetWaypoints()
@@ -74,6 +78,9 @@ namespace PvZRI.Zombies
             {
                 currentSpeed = moveSpeed;
             }
+
+            distanceTravelled += Vector2.Distance(transform.position, previousPosition);
+            previousPosition = transform.position;
         }
 
         public void move()
