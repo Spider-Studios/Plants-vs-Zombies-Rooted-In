@@ -76,8 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6019453725058403666, guid: 227a17bd92c88624580e5a94fd56baa9,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a03bddd3d8c5d240abb5cf44c9aa1d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -142,6 +141,7 @@ MonoBehaviour:
   reward: 5
   damageToPlayer: 5
   zombieHitSound: {fileID: 4617812170248785679}
+  distanceTravelled: 0
 --- !u!95 &431716176
 Animator:
   serializedVersion: 3
@@ -150,7 +150,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831621989952849199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 03168f452a7027c439c3783be4e927aa, type: 2}
   m_CullingMode: 0
