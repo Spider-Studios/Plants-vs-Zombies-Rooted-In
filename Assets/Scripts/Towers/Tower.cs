@@ -135,10 +135,13 @@ namespace PvZRI.Towers
 
         private void OnMouseOver()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (canBePlacedOn.ToString() != "Track")
             {
-                selectTower.selected = this;
-                selectTower.ShowSelectedPanel();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    selectTower.selected = this;
+                    selectTower.ShowSelectedPanel();
+                }
             }
         }
 
