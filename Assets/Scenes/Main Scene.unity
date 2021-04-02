@@ -372,8 +372,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -104.92993, y: -25.70996}
-  m_SizeDelta: {x: 168.13, y: 35.419983}
+  m_AnchoredPosition: {x: -107, y: -40}
+  m_SizeDelta: {x: 168.13, y: 33.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72912348
 MonoBehaviour:
@@ -422,6 +422,18 @@ MonoBehaviour:
       - m_Target: {fileID: 72912351}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Menu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1138931682}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
