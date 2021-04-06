@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 using PvZRI.Towers;
+using UnityEngine.UI;
 
 namespace PvZRI.Interaction
 {
@@ -11,6 +12,7 @@ namespace PvZRI.Interaction
     {
         Tower towerToSpawn = null;
         bool showSprite = false;
+        private bool textBlink = false;
         GameObject sprite = null;
 
         public GameObject rangeDisp;
@@ -53,6 +55,12 @@ namespace PvZRI.Interaction
                     sprite.GetComponent<SpriteRenderer>().color = Color.red;
                     disp.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 0.5f);
                 }
+
+                if(Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Destroy(GameObject.Find("hover sprite"));
+                    showSprite = false;
+                }
             }
         }
 
@@ -75,7 +83,6 @@ namespace PvZRI.Interaction
             }
             else
             {
-                print("Not enough sun");
             }
         }
 
@@ -98,6 +105,11 @@ namespace PvZRI.Interaction
                 return hit.transform.tag;
             }
             return null;
+        }
+
+        public void DestroyHoverSprite()
+        {
+            Destroy(GameObject.Find("hover sprite"));
         }
     }
 }
