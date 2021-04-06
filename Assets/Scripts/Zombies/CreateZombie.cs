@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CreateZombie : MonoBehaviour
 {
-    public GameObject zombieToSpawn;
+    public GameObject zombieToSpawn, zombieToSpawn2;
     public Transform spawnLocation;
 
     // Update is called once per frame
@@ -13,6 +13,11 @@ public class CreateZombie : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             Instantiate(zombieToSpawn, spawnLocation.position, Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Instantiate(zombieToSpawn2, spawnLocation.position, Quaternion.identity);
         }
     }
 }

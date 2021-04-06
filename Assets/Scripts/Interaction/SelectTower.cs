@@ -29,6 +29,8 @@ namespace PvZRI.Interaction
 
         public GameObject upgrade1, upgrade2, upgrade3, upgrade4;
 
+        public Button targetFirst, targetLast;
+
         void Start()
         {
             upgrade1 = selectedPanel.transform.Find("Upgrade 1").gameObject;
@@ -120,6 +122,12 @@ namespace PvZRI.Interaction
 
             //show the tower's name
             selectedPanel.transform.Find("Tower Name").GetComponent<Text>().text = selected.name;
+
+            //targetFirst = transform.Find("Target First").GetComponent<Button>();
+            targetFirst.onClick.RemoveAllListeners();
+            targetLast.onClick.RemoveAllListeners();
+            targetFirst.onClick.AddListener(selected.TargetFirst);
+            targetLast.onClick.AddListener(selected.TargetLast);
             
         }
 

@@ -18,6 +18,8 @@ namespace PvZRI.Towers
         public float range = 1;
         public float timeBetweenAttacks = 1;
         float timeSinceLastAttack;
+        public enum targetingType { first, last, strongest, weakest };
+        public targetingType targeting;
 
         [Space]
         [Header("Projectile")]
@@ -49,7 +51,7 @@ namespace PvZRI.Towers
         [HideInInspector]
         public List<GameObject> targets = new List<GameObject>();
         Transform shootingAt = null;
-                
+
         CircleCollider2D sightRange = null;
 
         SelectTower selectTower = null;
@@ -79,12 +81,12 @@ namespace PvZRI.Towers
                     ShootAtTarget(shootingAt);
             }
 
-            if(selectTower.selected != this)
+            if (selectTower.selected != this)
             {
                 rangeDisplay.SetActive(false);
             }
 
-            
+
 
             sightRange.radius = range;
             rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
@@ -99,10 +101,45 @@ namespace PvZRI.Towers
                 for (int i = 0; i < targets.Count; i++)
                 {
                     //target the zombie that has moved the furthest
-                    if (t.GetComponent<ZombieControl>().distanceTravelled < targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                    if (targeting.ToString() == ("first"))
                     {
-                        t = targets[i];
+                        if (t.GetComponent<ZombieControl>().distanceTravelled < targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                        {
+                            t = targets[i];
+                        }
                     }
+
+                    //target the zombie that has moved the least
+                    if (targeting.ToString() == ("last"))
+                    {
+                        if (t.GetComponent<ZombieControl>().distanceTravelled > targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                        {
+                            t = targets[i];
+                        }
+                    }
+
+                    ////target the zombie with the most health
+                    //if (targeting.ToString() == ("strongest"))
+                    //{
+                    //    print("A");
+                    //    if (t.GetComponent<ZombieControl>().distanceTravelled < targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                    //    {
+                    //        if (t.GetComponent<ZombieControl>().health > targets[i].GetComponent<ZombieControl>().health)
+                    //        {
+
+                    //            t = targets[i];
+                    //        }
+                    //    }
+                    //}
+
+                    ////target the zombie with the least health
+                    //if (targeting.ToString() == ("weakest"))
+                    //{
+                    //    if (t.GetComponent<ZombieControl>().health < targets[i].GetComponent<ZombieControl>().health)
+                    //    {
+                    //        t = targets[i];
+                    //    }
+                    //}
                 }
 
                 shootingAt = t.transform;
@@ -132,6 +169,15 @@ namespace PvZRI.Towers
                     proj.firedFrom = this;
                 }
             }
+        }
+
+        public void TargetFirst()
+        {
+            targeting = targetingType.first;
+        }
+        public void TargetLast()
+        {
+            targeting = targetingType.last;
         }
 
         private void OnMouseOver()
