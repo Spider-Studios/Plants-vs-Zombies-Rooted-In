@@ -36,6 +36,7 @@ public class Upgrade : ScriptableObject
             towerToUpgrade.slowTime += projectileSlowDurationUpgrade;
             towerToUpgrade.sunReward += sunRewardUpgrade;
 
+            towerToUpgrade.sellValue += cost / 2;
             towerToUpgrade.path1Purchased++;
         }
         else

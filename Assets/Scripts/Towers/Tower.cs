@@ -11,6 +11,7 @@ namespace PvZRI.Towers
     {
         [Tooltip("Cost of the plant")]
         public int cost;
+        public int sellValue;
 
         [Space]
         [Header("Attacking")]
@@ -64,7 +65,7 @@ namespace PvZRI.Towers
 
             selectTower = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
 
-               
+            sellValue = cost / 2;
         }
 
         void Update()
