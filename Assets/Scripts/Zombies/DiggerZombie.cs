@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PvZRI.Zombies
 {
-    public class NewspaperZombie : ZombieControl
+    public class DiggerZombie : ZombieControl
     {
         SunTracker sunTracker;
         BrainsTracker brainsTracker;
@@ -23,10 +23,7 @@ namespace PvZRI.Zombies
         {
             move();
 
-            if (health <= 5)
-            {
-                moveSpeed = 3;
-            }
+            //changing tower script for selected ones to hit this zombie 
 
             if (health <= 0)
             {
@@ -45,3 +42,4 @@ namespace PvZRI.Zombies
         }
     }
 }
+

@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace PvZRI.Zombies
 {
-    public class NewspaperZombie : ZombieControl
+    public class DancingZombie : ZombieControl
     {
         SunTracker sunTracker;
         BrainsTracker brainsTracker;
-
         // Start is called before the first frame update
         void Start()
         {
@@ -23,10 +22,7 @@ namespace PvZRI.Zombies
         {
             move();
 
-            if (health <= 5)
-            {
-                moveSpeed = 3;
-            }
+            //creating waypoints to follow zombie, spawn 4 dancing zombies behind it at selected points on the map 
 
             if (health <= 0)
             {
@@ -45,3 +41,4 @@ namespace PvZRI.Zombies
         }
     }
 }
+

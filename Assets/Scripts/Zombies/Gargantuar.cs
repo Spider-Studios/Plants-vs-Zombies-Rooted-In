@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace PvZRI.Zombies
 {
-    public class NewspaperZombie : ZombieControl
+    public class Gargantuar : ZombieControl
     {
         SunTracker sunTracker;
         BrainsTracker brainsTracker;
-
         // Start is called before the first frame update
         void Start()
         {
@@ -23,10 +22,10 @@ namespace PvZRI.Zombies
         {
             move();
 
-            if (health <= 5)
-            {
-                moveSpeed = 3;
-            }
+            //if (health <= 10)
+            //{
+                //spawn in Imp
+            //}
 
             if (health <= 0)
             {

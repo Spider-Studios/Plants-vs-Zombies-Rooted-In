@@ -10,7 +10,7 @@ namespace PvZRI.Zombies
         public GameObject[] waypoints;
         public GameObject waypointParent;
         public float moveSpeed = 2f;
-        private int waypointIndex = 0;
+        public int waypointIndex = 0;
 
         public int health = 0;
         public bool hasBeenHit = false;
