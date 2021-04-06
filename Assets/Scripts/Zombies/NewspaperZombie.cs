@@ -36,7 +36,7 @@ namespace PvZRI.Zombies
 
             if (hasBeenHit == true)
             {
-                StartCoroutine(timer());
+               // StartCoroutine(timer());
             }
             else
             {

@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7831621989952849193, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a2de7643a1ff19b4b9b5aafdb9acfdee,
+        type: 3}
     - target: {fileID: 7831621989952849194, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
         type: 3}
       propertyPath: m_Name
-      value: Zombie
+      value: Dancing Zombie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
