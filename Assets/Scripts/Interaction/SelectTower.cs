@@ -29,6 +29,8 @@ namespace PvZRI.Interaction
 
         public GameObject upgrade1, upgrade2, upgrade3, upgrade4;
 
+        public Button targetFirst, targetLast;
+
         void Start()
         {
             upgrade1 = selectedPanel.transform.Find("Upgrade 1").gameObject;
@@ -49,6 +51,16 @@ namespace PvZRI.Interaction
 
             if (selected != null)
             {
+                if(Input.GetKeyDown(KeyCode.Escape))
+                {
+                    HideSelectedPanel();
+                    return;
+                }
+
+                selectedPanel.transform.Find("Kill Count").GetComponent<Text>().text = "Zombies Killed: " + selected.killCount;
+
+                selectedPanel.transform.Find("Sell For").GetComponent<Text>().text = "Sell For: " + selected.sellValue;
+
                 //set the buttons text to the next upgrade
                 upgrade1.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[0].name + "\n Cost: " + selected.upgradePath1[0].cost;
                 upgrade2.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[1].name + "\n Cost: " + selected.upgradePath1[1].cost;
@@ -110,6 +122,12 @@ namespace PvZRI.Interaction
 
             //show the tower's name
             selectedPanel.transform.Find("Tower Name").GetComponent<Text>().text = selected.name;
+
+            //targetFirst = transform.Find("Target First").GetComponent<Button>();
+            targetFirst.onClick.RemoveAllListeners();
+            targetLast.onClick.RemoveAllListeners();
+            targetFirst.onClick.AddListener(selected.TargetFirst);
+            targetLast.onClick.AddListener(selected.TargetLast);
             
         }
 
@@ -133,6 +151,13 @@ namespace PvZRI.Interaction
             selected.upgradePath1[3].AddUpgrades();
         }
 
+        public void SellSelected()
+        {
+            SunTracker.instance.AddSun(selected.sellValue);
+            Destroy(selected.gameObject);
+            HideSelectedPanel();
+        }
+
         private void HideSelectedPanel()
         {
             selected.rangeDisplay.SetActive(false);
@@ -141,4 +166,3 @@ namespace PvZRI.Interaction
         }
     }
 }
-//TODO bug: clicking an upgrade button for a second time does not do the next upgrade. need to change the onclick somewhere else

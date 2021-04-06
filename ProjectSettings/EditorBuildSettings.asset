@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Reece.unity
-    guid: 4e53e5da308e5b54fb035843a41bedde
+    path: Assets/Scenes/Menu.unity
+    guid: 15e4eca97de469145aae74b91a940b22
+  - enabled: 1
+    path: Assets/Scenes/Main Scene.unity
+    guid: d8aeef79f7c5a5448af18746f3895a72
   m_configObjects: {}

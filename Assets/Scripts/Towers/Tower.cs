@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PvZRI.Zombies;
 
 namespace PvZRI.Towers
 {
@@ -10,12 +11,15 @@ namespace PvZRI.Towers
     {
         [Tooltip("Cost of the plant")]
         public int cost;
+        public int sellValue;
 
         [Space]
         [Header("Attacking")]
         public float range = 1;
         public float timeBetweenAttacks = 1;
         float timeSinceLastAttack;
+        public enum targetingType { first, last, strongest, weakest };
+        public targetingType targeting;
 
         [Space]
         [Header("Projectile")]
@@ -24,7 +28,12 @@ namespace PvZRI.Towers
         public float projectileSpeed;
         [Tooltip("How many zombies can the projectile pass through")]
         public int projectileHealth;
-        public Transform projectileSpawn = null;
+        public float slowAmount = 0;
+        public float slowTime;
+        public Transform[] projectileSpawn = new Transform[1];
+
+        [Tooltip("Sun given at the end of each wave")]
+        public int sunReward = 0;
 
         [SerializeField]
         public enum CanBePlacedOn { Grass, Water, Track };
@@ -42,7 +51,7 @@ namespace PvZRI.Towers
         [HideInInspector]
         public List<GameObject> targets = new List<GameObject>();
         Transform shootingAt = null;
-                
+
         CircleCollider2D sightRange = null;
 
         SelectTower selectTower = null;
@@ -57,6 +66,8 @@ namespace PvZRI.Towers
             rangeDisplay = sightRange.transform.GetChild(0).gameObject;
 
             selectTower = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
+
+            sellValue = cost / 2;
         }
 
         void Update()
@@ -70,10 +81,12 @@ namespace PvZRI.Towers
                     ShootAtTarget(shootingAt);
             }
 
-            if(selectTower.selected != this)
+            if (selectTower.selected != this)
             {
                 rangeDisplay.SetActive(false);
             }
+
+
 
             sightRange.radius = range;
             rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
@@ -84,8 +97,52 @@ namespace PvZRI.Towers
             //if the list is not empty
             if (targets.Count != 0)
             {
-                shootingAt = targets[0].transform;
-                //look at the first target
+                GameObject t = targets[0];
+                for (int i = 0; i < targets.Count; i++)
+                {
+                    //target the zombie that has moved the furthest
+                    if (targeting.ToString() == ("first"))
+                    {
+                        if (t.GetComponent<ZombieControl>().distanceTravelled < targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                        {
+                            t = targets[i];
+                        }
+                    }
+
+                    //target the zombie that has moved the least
+                    if (targeting.ToString() == ("last"))
+                    {
+                        if (t.GetComponent<ZombieControl>().distanceTravelled > targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                        {
+                            t = targets[i];
+                        }
+                    }
+
+                    ////target the zombie with the most health
+                    //if (targeting.ToString() == ("strongest"))
+                    //{
+                    //    print("A");
+                    //    if (t.GetComponent<ZombieControl>().distanceTravelled < targets[i].GetComponent<ZombieControl>().distanceTravelled)
+                    //    {
+                    //        if (t.GetComponent<ZombieControl>().health > targets[i].GetComponent<ZombieControl>().health)
+                    //        {
+
+                    //            t = targets[i];
+                    //        }
+                    //    }
+                    //}
+
+                    ////target the zombie with the least health
+                    //if (targeting.ToString() == ("weakest"))
+                    //{
+                    //    if (t.GetComponent<ZombieControl>().health < targets[i].GetComponent<ZombieControl>().health)
+                    //    {
+                    //        t = targets[i];
+                    //    }
+                    //}
+                }
+
+                shootingAt = t.transform;
 
                 Vector3 lookat = transform.right = shootingAt.position - transform.position;
                 lookat.z = 0;
@@ -100,20 +157,38 @@ namespace PvZRI.Towers
             if (Time.time - timeSinceLastAttack > 1 / timeBetweenAttacks)
             {
                 timeSinceLastAttack = Time.time;
-                GameObject shot = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
-                shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
-                shot.GetComponent<Projectile>().damage = damage;
-                shot.GetComponent<Projectile>().health = projectileHealth;
-                shot.GetComponent<Projectile>().firedFrom = this;
+                for (int i = 0; i < projectileSpawn.Length; i++)
+                {
+                    GameObject shot = Instantiate(projectile, projectileSpawn[i].position, Quaternion.identity);
+                    shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
+                    Projectile proj = shot.GetComponent<Projectile>();
+                    proj.damage = damage;
+                    proj.health = projectileHealth;
+                    proj.slow = slowAmount;
+                    proj.slowTime = slowTime;
+                    proj.firedFrom = this;
+                }
             }
+        }
+
+        public void TargetFirst()
+        {
+            targeting = targetingType.first;
+        }
+        public void TargetLast()
+        {
+            targeting = targetingType.last;
         }
 
         private void OnMouseOver()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (canBePlacedOn.ToString() != "Track")
             {
-                selectTower.selected = this;
-                selectTower.ShowSelectedPanel();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    selectTower.selected = this;
+                    selectTower.ShowSelectedPanel();
+                }
             }
         }
 

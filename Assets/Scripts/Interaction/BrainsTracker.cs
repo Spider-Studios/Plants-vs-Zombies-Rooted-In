@@ -10,7 +10,9 @@ public class BrainsTracker : MonoBehaviour
     public GameObject startButton;
     public GameObject spawnPoint;
     public GameObject gameOver;
+    public AudioSource screamSound;
 
+    private bool audioPlayed = false;
     private void Update()
     {
         brainsDisplay.text = "Brains: " + brains;
@@ -19,12 +21,15 @@ public class BrainsTracker : MonoBehaviour
             gameOver.SetActive(true);
             Destroy(startButton);
             Destroy(spawnPoint);
-            
+            if (audioPlayed == false)
+            {
+                screamSound.PlayDelayed(3);
+                audioPlayed = true;
+            }
         }
     }
-
-
-    public void Minushealth(int amount)
+    
+        public void Minushealth(int amount)
     {
         brains -= amount;
     }

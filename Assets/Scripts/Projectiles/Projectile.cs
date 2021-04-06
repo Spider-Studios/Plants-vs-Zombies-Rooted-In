@@ -9,6 +9,8 @@ namespace PvZRI.Towers
     {
         public float damage;
         public int health;
+        public float slow;
+        public float slowTime;
 
         [Tooltip("What tower was the projectile fired from")]
         public Tower firedFrom = null;
@@ -31,11 +33,22 @@ namespace PvZRI.Towers
             if (other.gameObject.tag == ("Zombie"))
             {
                 other.GetComponent<ZombieControl>().health -= (int)damage;
+                if(other.GetComponent<ZombieControl>().health <= 0)
+                {
+                    firedFrom.killCount++;
+                }
 
                 health--;
 
                 if(other.GetComponent<SpriteRenderer>().color == Color.white)
                 other.GetComponent<ZombieControl>().hasBeenHit = true;
+
+                if (slow > 0 && other.GetComponent<ZombieControl>().isSlowed == false)
+                {
+                    other.GetComponent<ZombieControl>().currentSpeed -= slow;
+                    other.GetComponent<ZombieControl>().isSlowed = true;
+                    other.GetComponent<ZombieControl>().slowTimer = slowTime;
+                }
             }
         }
     }

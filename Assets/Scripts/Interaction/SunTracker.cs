@@ -24,7 +24,13 @@ public class SunTracker : MonoBehaviour
     
     public Text sunDisplay;
 
-    
+    Color baseColor;
+
+    private void Start()
+    {
+        baseColor = sunDisplay.color;
+    }
+
     private void Update()
     {
         sunDisplay.text = "Sun: " + sun;
@@ -48,10 +54,21 @@ public class SunTracker : MonoBehaviour
         }
         else
         {
+            StartCoroutine(FlashText());
+            sunDisplay.color = baseColor;
             return false;
         }
     }
-
-    
+       
+    public IEnumerator FlashText()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            sunDisplay.color = Color.red;
+            yield return new WaitForSeconds(.1f);
+            sunDisplay.color = baseColor;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
 
 }
