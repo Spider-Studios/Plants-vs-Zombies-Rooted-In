@@ -133,6 +133,7 @@ MonoBehaviour:
   waypointParent: {fileID: 0}
   currentSpeed: 2
   moveSpeed: 2
+  waypointIndex: 0
   health: 5
   hasBeenHit: 0
   colourTimer: 0.09
