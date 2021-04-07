@@ -451,7 +451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -139.7, y: -19.399994}
+  m_AnchoredPosition: {x: -139.7, y: -19.400024}
   m_SizeDelta: {x: 168.13, y: 33.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72912348
@@ -2791,11 +2791,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9f87b8cb9517843bc2a2bf507e145e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brains: 40
+  brains: 1
   brainsDisplay: {fileID: 1752131349}
   startButton: {fileID: 2094375580}
   spawnPoint: {fileID: 1521026278}
   gameOver: {fileID: 765694263}
+  daytimeMusic: {fileID: 1413447096}
   screamSound: {fileID: 1396574166}
 --- !u!114 &1396574170
 MonoBehaviour:
@@ -4904,6 +4905,7 @@ MonoBehaviour:
   brainSound: {fileID: 1218419367}
   dayTimeSound: {fileID: 1413447096}
   idleSound: {fileID: 130258671}
+  winMessage: {fileID: 0}
   currentWaveDisplay: {fileID: 1652775166}
   isSpawning: 0
 --- !u!82 &1521026281

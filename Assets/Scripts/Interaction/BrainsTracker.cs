@@ -10,6 +10,7 @@ public class BrainsTracker : MonoBehaviour
     public GameObject startButton;
     public GameObject spawnPoint;
     public GameObject gameOver;
+    public GameObject daytimeMusic;
     public AudioSource screamSound;
 
     private bool audioPlayed = false;
@@ -19,6 +20,7 @@ public class BrainsTracker : MonoBehaviour
         if (brains <= 0)
         {
             gameOver.SetActive(true);
+            daytimeMusic.SetActive(false);
             Destroy(startButton);
             Destroy(spawnPoint);
             if (audioPlayed == false)

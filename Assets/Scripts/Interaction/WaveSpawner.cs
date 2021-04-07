@@ -23,6 +23,7 @@ public class WaveSpawner : MonoBehaviour
     public GameObject brainSound;
     public GameObject dayTimeSound;
     public GameObject idleSound;
+    public GameObject winMessage;
 
     private int positionInWave = 0;
     private Wave currentWave;
@@ -57,13 +58,17 @@ public class WaveSpawner : MonoBehaviour
                 dayTimeSound.SetActive(false);
 
                 //add the sun rewards for towers that have them
-                foreach(Tower tower in FindObjectsOfType<Tower>())
+                foreach (Tower tower in FindObjectsOfType<Tower>())
                 {
-                    if(tower.sunReward > 0)
+                    if (tower.sunReward > 0)
                     {
                         sunTracker.AddSun(tower.sunReward);
                     }
                 }
+            }
+            if (totalEnemies.Length == 0 && currentWaveNumber == 25)
+            {
+                winMessage.SetActive(true);
             }
         }
     }
