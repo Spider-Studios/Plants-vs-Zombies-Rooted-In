@@ -1,50 +1,91 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using PvZRI.Interaction;
+using PvZRI.Towers;
 
 public class Tooltip : MonoBehaviour
 {
-    private static Tooltip instance;
-    private Text tooltipText;
-    private RectTransform backgroundRectTransform;
+    #region Singleton
+    public static Tooltip instance;
 
-    private void Awake()
+    void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of Tooltip found");
+            return;
+        }
         instance = this;
-        backgroundRectTransform = transform.Find("Background").GetComponent<RectTransform>();
-        tooltipText = transform.Find("Tooltip Text").GetComponent<Text>();
-        ShowTooltip("Random ToolTIp");
     }
+    #endregion
+
+    [SerializeField] RectTransform popupObject;
+    [SerializeField] Text infoText;
+    [SerializeField] Vector3 offset;
+    [SerializeField] float padding;
+    [SerializeField] Canvas canvas;
 
     private void Update()
     {
-        Vector2 localPoint;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out localPoint);
-        transform.localPosition = localPoint;
+        FollowCursor();
     }
 
-    private void ShowTooltip(string tooltipString)
+    private void FollowCursor()
     {
-        gameObject.SetActive(true);
+        if(!popupObject.gameObject.activeSelf) { return; }
 
-        tooltipText.text = tooltipString;
-        float textPaddingSize = 4f;
-        Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textPaddingSize * 2f, tooltipText.preferredHeight + textPaddingSize * 2f);
-        backgroundRectTransform.sizeDelta = backgroundSize;
+        Vector3 newPos = Input.mousePosition + offset;
+        newPos.z = 0f;
+
+        float rightEdgeToScreenDistance = Screen.width - (newPos.x + popupObject.rect.width * canvas.scaleFactor / 2) - padding;
+        if(rightEdgeToScreenDistance <0)
+        {
+            newPos.x += rightEdgeToScreenDistance;
+        }
+
+        float leftEdgeToScreenDistance = 0 - (newPos.x + popupObject.rect.width * canvas.scaleFactor / 2) + padding;
+        if (leftEdgeToScreenDistance > 0)
+        {
+            newPos.x += leftEdgeToScreenDistance;
+        }
+
+        float topEdgeToScreenDistance = Screen.height - (newPos.y + popupObject.rect.height * canvas.scaleFactor) - padding;
+        if (topEdgeToScreenDistance < 0)
+        {
+            newPos.y += topEdgeToScreenDistance;
+        }
+        popupObject.transform.position = newPos;
     }
 
-    private void HideTooltip()
+    public void DisplayShopInfo(Tower tower)
     {
-        gameObject.SetActive(false);
+        StringBuilder builder = new StringBuilder();
+        builder.Append("<size=20>").Append(tower.name).Append("</size>").AppendLine();
+        builder.Append(tower.GetShopInfoText());
+
+        infoText.text = builder.ToString();
+        popupObject.gameObject.SetActive(true);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(popupObject);
     }
 
-    public static void ShowToolTip_Static(string tooltipString)
+    public void DisplayUpgradeInfo(Upgrade upgrade)
     {
-        instance.ShowTooltip(tooltipString);
+        StringBuilder builder = new StringBuilder();
+        builder.Append("<size=20>").Append(upgrade.name).Append("</size>").AppendLine();
+        builder.Append(upgrade.GetShopInfoText());
+
+        infoText.text = builder.ToString();
+        popupObject.gameObject.SetActive(true);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(popupObject);
     }
-    public static void HideToolTip_Static()
+
+    public void HideInfo()
     {
-        instance.HideTooltip();
+        popupObject.gameObject.SetActive(false);
     }
+
+    
 }

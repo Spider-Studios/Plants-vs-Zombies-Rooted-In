@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using PvZRI.Zombies;
+using System.Text;
 
 namespace PvZRI.Towers
 {
@@ -12,6 +13,8 @@ namespace PvZRI.Towers
         [Tooltip("Cost of the plant")]
         public int cost;
         public int sellValue;
+        [Multiline]
+        public string description;
 
         [Space]
         [Header("Attacking")]
@@ -175,9 +178,18 @@ namespace PvZRI.Towers
         {
             targeting = targetingType.first;
         }
+
         public void TargetLast()
         {
             targeting = targetingType.last;
+        }
+
+        public string GetShopInfoText()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(cost + " Sun").AppendLine();
+            builder.Append(description);
+            return builder.ToString();
         }
 
         private void OnMouseOver()

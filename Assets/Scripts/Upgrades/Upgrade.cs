@@ -1,11 +1,14 @@
 using UnityEngine;
 using PvZRI.Interaction;
 using PvZRI.Towers;
+using System.Text;
 
 [CreateAssetMenu(fileName = "Upgrade", menuName = "Upgrade", order = 1)]
 public class Upgrade : ScriptableObject
 {
     public int cost;
+    [Multiline]
+    public string description;
     [Space]
     public float rangeUpgrade;
     public float damageUpgrade;
@@ -43,5 +46,13 @@ public class Upgrade : ScriptableObject
         {
             Debug.Log("not enough sun");  
         }
+    }
+
+    public string GetShopInfoText()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.Append(cost + " Sun").AppendLine();
+        builder.Append(description);
+        return builder.ToString();
     }
 }
