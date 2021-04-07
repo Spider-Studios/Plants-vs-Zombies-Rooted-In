@@ -5860,6 +5860,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5299511599033706913, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511599033706913, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511599033706913, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5299511599441291644, guid: ef638432ba04f0447a22b86345bd1c48,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5924,6 +5939,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 59.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511599763039566, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511599763039566, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511599763039566, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5299511599792877546, guid: ef638432ba04f0447a22b86345bd1c48,
         type: 3}
@@ -6069,6 +6099,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600106400312, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600106400312, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600106400312, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5299511600188389937, guid: ef638432ba04f0447a22b86345bd1c48,
         type: 3}

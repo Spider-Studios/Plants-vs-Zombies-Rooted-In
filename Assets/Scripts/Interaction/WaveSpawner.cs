@@ -69,6 +69,8 @@ public class WaveSpawner : MonoBehaviour
             if (totalEnemies.Length == 0 && currentWaveNumber == 25)
             {
                 winMessage.SetActive(true);
+                Destroy(idleSound);
+                Destroy(dayTimeSound);
             }
         }
     }
