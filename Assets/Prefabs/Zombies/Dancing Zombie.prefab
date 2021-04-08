@@ -40,7 +40,8 @@ MonoBehaviour:
   damageToPlayer: 0
   zombieHitSound: {fileID: 0}
   distanceTravelled: 0
-  followerPrefab: {fileID: 778427609235385950, guid: f320d7581d94b7e41a463d78e8c0fe9b,
+  previousPosition: {x: 0, y: 0, z: 0}
+  followerPrefab: {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
     type: 3}
 --- !u!1 &1925284642271560130
 GameObject:

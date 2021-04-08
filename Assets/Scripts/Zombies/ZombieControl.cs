@@ -27,15 +27,10 @@ namespace PvZRI.Zombies
         [HideInInspector]
         public Vector3 previousPosition;
 
-        SunTracker sunTracker;
-        BrainsTracker brainsTracker;
-
         void Start()
         {
             GetWaypoints();
             transform.position = waypoints[waypointIndex].transform.position;
-            sunTracker = GameObject.Find("GameMaster").GetComponent<SunTracker>();
-            brainsTracker = GameObject.Find("GameMaster").GetComponent<BrainsTracker>();
             previousPosition = transform.position;
         }
 
@@ -57,7 +52,7 @@ namespace PvZRI.Zombies
             if (health <= 0)
             {
                 Destroy(gameObject);
-                sunTracker.AddSun(reward);
+                SunTracker.instance.AddSun(reward);
             }
 
             if (hasBeenHit == true)
@@ -116,11 +111,11 @@ namespace PvZRI.Zombies
         {
             if (other.gameObject.tag == "House")
             {
-                brainsTracker.Minushealth(damageToPlayer);
+                BrainsTracker.instance.Minushealth(damageToPlayer);
                 Destroy(gameObject);
-                if (brainsTracker.brains < 0)
+                if (BrainsTracker.instance.brains < 0)
                 {
-                    brainsTracker.brains = 0;
+                    BrainsTracker.instance.brains = 0;
                 }
             }
         }
