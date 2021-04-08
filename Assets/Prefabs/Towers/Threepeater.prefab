@@ -106,8 +106,8 @@ MonoBehaviour:
   cost: 200
   sellValue: 0
   description: 
-  range: 10
-  timeBetweenAttacks: 1
+  range: 7
+  timeBetweenAttacks: 0.8
   targeting: 0
   projectile: {fileID: 2366004677586742330, guid: ffa6bb0d833fab54880b772e14df549f,
     type: 3}
@@ -123,10 +123,10 @@ MonoBehaviour:
   sunReward: 0
   canBePlacedOn: 0
   upgradePath1:
-  - {fileID: 11400000, guid: 8f0d0ed91e0951846ba0be9d6fdc2a85, type: 2}
-  - {fileID: 11400000, guid: 1629cc983c1acad48a70f8016ce4f9b8, type: 2}
-  - {fileID: 11400000, guid: 6b8e5634f1c2e5141bb1c85a87a6d1ff, type: 2}
-  - {fileID: 11400000, guid: e5625f19e09ba6c428c52eddf4060f6d, type: 2}
+  - {fileID: 11400000, guid: f447374a17b32b4439270b8644670dfd, type: 2}
+  - {fileID: 11400000, guid: 776b805a40536c14cac2c3e516dc42c7, type: 2}
+  - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
+  - {fileID: 11400000, guid: f848dd8924c6dc04495b1c52a790a3d9, type: 2}
   path1Purchased: 0
   killCount: 0
   targets: []
