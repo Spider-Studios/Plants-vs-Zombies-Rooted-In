@@ -12,12 +12,14 @@ public class CreateZombie : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Instantiate(zombieToSpawn, spawnLocation.position, Quaternion.identity);
+            GameObject spawned = Instantiate(zombieToSpawn, spawnLocation.position, Quaternion.identity);
+            spawned.name = zombieToSpawn.name;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            Instantiate(zombieToSpawn2, spawnLocation.position, Quaternion.identity);
+            GameObject spawned = Instantiate(zombieToSpawn2, spawnLocation.position, Quaternion.identity);
+            spawned.name = zombieToSpawn2.name;
         }
     }
 }

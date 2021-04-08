@@ -16,6 +16,7 @@ TagManager:
   - Water
   - Rock
   - House Entrance
+  - Dancing Spawn
   layers:
   - Default
   - TransparentFX

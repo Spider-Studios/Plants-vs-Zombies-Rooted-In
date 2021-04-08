@@ -5,6 +5,21 @@ using UnityEngine.UI;
 
 public class BrainsTracker : MonoBehaviour
 {
+
+    #region Singleton
+    public static BrainsTracker instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of brains tracker found");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
     public int brains = 0;
     public Text brainsDisplay;
     public GameObject startButton;

@@ -6,15 +6,15 @@ namespace PvZRI.Zombies
 {
     public class DancingZombie : ZombieControl
     {
-        SunTracker sunTracker;
-        BrainsTracker brainsTracker;
+
+        [SerializeField]
+        private GameObject followerPrefab;
+
         // Start is called before the first frame update
         void Start()
         {
             GetWaypoints();
             transform.position = waypoints[waypointIndex].transform.position;
-            sunTracker = GameObject.Find("GameMaster").GetComponent<SunTracker>();
-            brainsTracker = GameObject.Find("GameMaster").GetComponent<BrainsTracker>();
         }
 
         // Update is called once per frame
@@ -27,7 +27,7 @@ namespace PvZRI.Zombies
             if (health <= 0)
             {
                 Destroy(gameObject);
-                sunTracker.AddSun(reward);
+                SunTracker.instance.AddSun(reward);
             }
 
             if (hasBeenHit == true)
@@ -37,6 +37,15 @@ namespace PvZRI.Zombies
             else
             {
                 GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+        public override void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "Dancing Spawn")
+            {
+                //spawn followers
+                GameObject spawned = Instantiate(followerPrefab, transform.GetChild(0).transform.position, Quaternion.identity, null);
+                spawned.GetComponent<ZombieControl>().waypointIndex = this.waypointIndex -1;
             }
         }
     }

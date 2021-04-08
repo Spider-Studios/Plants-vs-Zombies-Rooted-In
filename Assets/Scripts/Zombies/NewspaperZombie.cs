@@ -6,16 +6,12 @@ namespace PvZRI.Zombies
 {
     public class NewspaperZombie : ZombieControl
     {
-        SunTracker sunTracker;
-        BrainsTracker brainsTracker;
 
         // Start is called before the first frame update
         void Start()
         {
             GetWaypoints();
             transform.position = waypoints[waypointIndex].transform.position;
-            sunTracker = GameObject.Find("GameMaster").GetComponent<SunTracker>();
-            brainsTracker = GameObject.Find("GameMaster").GetComponent<BrainsTracker>();
         }
 
         // Update is called once per frame
@@ -31,7 +27,7 @@ namespace PvZRI.Zombies
             if (health <= 0)
             {
                 Destroy(gameObject);
-                sunTracker.AddSun(reward);
+                SunTracker.instance.AddSun(reward);
             }
 
             if (hasBeenHit == true)

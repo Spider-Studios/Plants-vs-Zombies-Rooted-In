@@ -111,9 +111,9 @@ namespace PvZRI.Zombies
             slowTimer = 0;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public virtual void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.tag == ("House"))
+            if (other.gameObject.tag == "House")
             {
                 brainsTracker.Minushealth(damageToPlayer);
                 Destroy(gameObject);

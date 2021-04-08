@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 4054848961673654266}
   m_Layer: 0
   m_Name: Track Waypoints
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
