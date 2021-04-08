@@ -139,10 +139,11 @@ MonoBehaviour:
   colourTimer: 0.09
   isSlowed: 0
   slowTimer: 0
-  reward: 2
+  reward: 3
   damageToPlayer: 5
   zombieHitSound: {fileID: 4617812170248785679}
   distanceTravelled: 0
+  previousPosition: {x: 0, y: 0, z: 0}
 --- !u!95 &431716176
 Animator:
   serializedVersion: 3

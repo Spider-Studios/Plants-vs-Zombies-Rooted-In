@@ -36,7 +36,7 @@ MonoBehaviour:
   colourTimer: 0
   isSlowed: 0
   slowTimer: 0
-  reward: 6
+  reward: 7
   damageToPlayer: 0
   zombieHitSound: {fileID: 0}
   distanceTravelled: 0

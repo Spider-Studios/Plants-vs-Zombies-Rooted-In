@@ -104,7 +104,7 @@ MonoBehaviour:
   sellValue: 0
   description: Snow Peas shoot frozen peas that damage and slow the enemy.
   range: 5
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 1.5
   targeting: 0
   projectile: {fileID: 2366004677586742330, guid: 3475a2cab1a259245ba7de84456266ed,
     type: 3}

@@ -36,10 +36,11 @@ MonoBehaviour:
   colourTimer: 0.09
   isSlowed: 0
   slowTimer: 0
-  reward: 7
+  reward: 8
   damageToPlayer: 10
   zombieHitSound: {fileID: 0}
   distanceTravelled: 0
+  previousPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &6929174430790041727
 PrefabInstance:
   m_ObjectHideFlags: 0
