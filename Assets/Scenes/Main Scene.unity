@@ -3968,8 +3968,8 @@ MonoBehaviour:
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
-    - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
-    - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
+    - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
+    - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
     spawnInterval: 1.5
     reward: 25
   - waveName: 4
@@ -5214,6 +5214,11 @@ PrefabInstance:
     - target: {fileID: 5299511599763039566, guid: ef638432ba04f0447a22b86345bd1c48,
         type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511599763039566, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5299511599763039566, guid: ef638432ba04f0447a22b86345bd1c48,

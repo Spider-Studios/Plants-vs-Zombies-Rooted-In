@@ -66,7 +66,7 @@ public class WaveSpawner : MonoBehaviour
                     }
                 }
             }
-            if (totalEnemies.Length == 0 && currentWaveNumber == waves.Length)
+            if (totalEnemies.Length == 0 && currentWaveNumber == waves.Length - 1)
             {
                 winMessage.SetActive(true);
                 Destroy(idleSound);
