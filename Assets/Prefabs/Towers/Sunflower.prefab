@@ -116,7 +116,7 @@ MonoBehaviour:
   slowTime: 0
   projectileSpawn:
   - {fileID: 6683730700520231442}
-  sunReward: 50
+  sunReward: 25
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: 56d57acc192a7f44bb8cdbc1a461687d, type: 2}
