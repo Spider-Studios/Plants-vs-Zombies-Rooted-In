@@ -32,7 +32,7 @@ namespace PvZRI.Zombies
 
             if (hasBeenHit == true)
             {
-               // StartCoroutine(timer());
+               StartCoroutine(ColourTimer());
             }
             else
             {
@@ -46,6 +46,16 @@ namespace PvZRI.Zombies
                 //spawn followers
                 GameObject spawned = Instantiate(followerPrefab, transform.GetChild(0).transform.position, Quaternion.identity, null);
                 spawned.GetComponent<ZombieControl>().waypointIndex = this.waypointIndex -1;
+            }
+
+            if (other.gameObject.tag == "House")
+            {
+                BrainsTracker.instance.Minushealth(damageToPlayer);
+                Destroy(gameObject);
+                if (BrainsTracker.instance.brains < 0)
+                {
+                    BrainsTracker.instance.brains = 0;
+                }
             }
         }
     }

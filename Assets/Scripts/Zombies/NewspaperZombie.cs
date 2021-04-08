@@ -32,11 +32,24 @@ namespace PvZRI.Zombies
 
             if (hasBeenHit == true)
             {
-               // StartCoroutine(timer());
+               StartCoroutine(ColourTimer());
             }
             else
             {
                 GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+
+        public override void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "House")
+            {
+                BrainsTracker.instance.Minushealth(damageToPlayer);
+                Destroy(gameObject);
+                if (BrainsTracker.instance.brains < 0)
+                {
+                    BrainsTracker.instance.brains = 0;
+                }
             }
         }
     }

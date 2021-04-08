@@ -104,8 +104,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 200
-  range: 20
+  sellValue: 0
+  description: 
+  range: 10
   timeBetweenAttacks: 1
+  targeting: 0
   projectile: {fileID: 2366004677586742330, guid: ffa6bb0d833fab54880b772e14df549f,
     type: 3}
   damage: 1
@@ -117,6 +120,7 @@ MonoBehaviour:
   - {fileID: 6683730700520231442}
   - {fileID: 870472233075166788}
   - {fileID: 1671801687123660440}
+  sunReward: 0
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: 8f0d0ed91e0951846ba0be9d6fdc2a85, type: 2}
