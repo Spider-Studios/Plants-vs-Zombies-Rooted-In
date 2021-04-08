@@ -38,6 +38,9 @@ namespace PvZRI.Zombies
             {
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
+
+            distanceTravelled += Vector2.Distance(transform.position, previousPosition);
+            previousPosition = transform.position;
         }
         public override void OnTriggerEnter2D(Collider2D other)
         {

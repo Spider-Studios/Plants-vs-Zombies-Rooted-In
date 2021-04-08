@@ -106,7 +106,7 @@ MonoBehaviour:
   sellValue: 0
   description: Description of the pea shooter
   range: 20
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 1.5
   targeting: 0
   projectile: {fileID: 2366004677586742330, guid: ffa6bb0d833fab54880b772e14df549f,
     type: 3}

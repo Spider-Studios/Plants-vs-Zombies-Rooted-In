@@ -132,14 +132,14 @@ MonoBehaviour:
   - {fileID: 0}
   waypointParent: {fileID: 0}
   currentSpeed: 2
-  moveSpeed: 2
+  moveSpeed: 1.5
   waypointIndex: 0
   health: 5
   hasBeenHit: 0
   colourTimer: 0.09
   isSlowed: 0
   slowTimer: 0
-  reward: 5
+  reward: 2
   damageToPlayer: 5
   zombieHitSound: {fileID: 4617812170248785679}
   distanceTravelled: 0

@@ -24,7 +24,8 @@ namespace PvZRI.Zombies
         public AudioSource zombieHitSound;
 
         public float distanceTravelled = 0;
-        Vector3 previousPosition;
+        [HideInInspector]
+        public Vector3 previousPosition;
 
         SunTracker sunTracker;
         BrainsTracker brainsTracker;
