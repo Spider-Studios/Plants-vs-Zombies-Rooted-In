@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sunflower Factory
   m_EditorClassIdentifier: 
   cost: 400
-  description: 
+  description: +100 sun
   rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0

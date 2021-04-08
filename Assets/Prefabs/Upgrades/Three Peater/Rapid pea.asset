@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Rapid pea
   m_EditorClassIdentifier: 
   cost: 100
-  description: 
+  description: +1 attack speed
   rangeUpgrade: 0
   damageUpgrade: 0
-  attackSpeedUpgrade: 0.5
+  attackSpeedUpgrade: 1
   projectileSpeedUpgrade: 0
   projectileSlowUpgrade: 0
   projectileSlowDurationUpgrade: 0

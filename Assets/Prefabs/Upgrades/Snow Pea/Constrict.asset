@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Constrict
   m_EditorClassIdentifier: 
   cost: 100
-  description: 
+  description: +2 slow duration
   rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0

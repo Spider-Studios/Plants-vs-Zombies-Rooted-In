@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Solar Power
   m_EditorClassIdentifier: 
   cost: 200
-  description: 
+  description: +50 sun
   rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0

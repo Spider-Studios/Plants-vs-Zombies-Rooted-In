@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 200
   sellValue: 0
-  description: 
+  description: Threepeaters shoot three peas at once.
   range: 7
   timeBetweenAttacks: 0.8
   targeting: 0

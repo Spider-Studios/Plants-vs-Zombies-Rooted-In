@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sunny Day
   m_EditorClassIdentifier: 
   cost: 100
-  description: 
+  description: +25 sun
   rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0

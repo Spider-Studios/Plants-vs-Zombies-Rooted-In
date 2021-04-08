@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   sellValue: 0
-  description: 
+  description: Sunflowers produce Sun at the end of each round.
   range: 2
   timeBetweenAttacks: 0
   targeting: 0

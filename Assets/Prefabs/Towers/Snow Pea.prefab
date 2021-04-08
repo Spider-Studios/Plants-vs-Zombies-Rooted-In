@@ -101,8 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 75
+  sellValue: 0
+  description: Snow Peas shoot frozen peas that damage and slow the enemy.
   range: 5
   timeBetweenAttacks: 1
+  targeting: 0
   projectile: {fileID: 2366004677586742330, guid: 3475a2cab1a259245ba7de84456266ed,
     type: 3}
   damage: 1
@@ -112,6 +115,7 @@ MonoBehaviour:
   slowTime: 2
   projectileSpawn:
   - {fileID: 6683730700520231442}
+  sunReward: 0
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: f8a990cfc2a6a8c47930ac4d362e9729, type: 2}

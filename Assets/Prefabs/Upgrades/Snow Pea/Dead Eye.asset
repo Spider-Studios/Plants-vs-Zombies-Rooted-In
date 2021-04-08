@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dead Eye
   m_EditorClassIdentifier: 
   cost: 20
+  description: +2 range
   rangeUpgrade: 2
   damageUpgrade: 0
   attackSpeedUpgrade: 0
@@ -20,3 +21,4 @@ MonoBehaviour:
   projectileSlowUpgrade: 0
   projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
+  sunRewardUpgrade: 0

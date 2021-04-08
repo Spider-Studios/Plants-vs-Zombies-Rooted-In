@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Twin Sun
   m_EditorClassIdentifier: 
   cost: 300
-  description: 
+  description: +75 sun
   rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0
