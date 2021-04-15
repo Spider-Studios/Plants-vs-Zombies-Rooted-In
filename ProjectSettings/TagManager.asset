@@ -17,6 +17,7 @@ TagManager:
   - Rock
   - House Entrance
   - Dancing Spawn
+  - Torchwood
   layers:
   - Default
   - TransparentFX

@@ -7,10 +7,12 @@ namespace PvZRI.Towers
 {
     public class Projectile : MonoBehaviour
     {
+        public float speed;
         public float damage;
         public int health;
         public float slow;
         public float slowTime;
+        public bool isOnFire = false;
 
         [Tooltip("What tower was the projectile fired from")]
         public Tower firedFrom = null;
@@ -22,18 +24,20 @@ namespace PvZRI.Towers
 
         private void Update()
         {
+          //GetComponent<Rigidbody2D>().velocity = transform.up * speed;
             if (health <= 0)
             {
                 Destroy(gameObject);
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.tag == ("Zombie"))
             {
-                other.GetComponent<ZombieControl>().health -= (int)damage;
-                if(other.GetComponent<ZombieControl>().health <= 0)
+                ZombieControl hit = other.GetComponent<ZombieControl>();
+                hit.health -= (int)damage;
+                if(hit.health <= 0)
                 {
                     firedFrom.killCount++;
                 }
@@ -41,14 +45,30 @@ namespace PvZRI.Towers
                 health--;
 
                 if(other.GetComponent<SpriteRenderer>().color == Color.white)
-                other.GetComponent<ZombieControl>().hasBeenHit = true;
+                    hit.hasBeenHit = true;
 
-                if (slow > 0 && other.GetComponent<ZombieControl>().isSlowed == false)
+                if (slow > 0 && hit.isSlowed == false)
                 {
-                    other.GetComponent<ZombieControl>().currentSpeed -= slow;
-                    other.GetComponent<ZombieControl>().isSlowed = true;
-                    other.GetComponent<ZombieControl>().slowTimer = slowTime;
+                    hit.currentSpeed -= slow;
+                    hit.isSlowed = true;
+                    hit.slowTimer = slowTime;
                 }
+
+                if(isOnFire)
+                {
+                    hit.isSlowed = false;
+
+                    hit.slowTimer = 0;
+                }
+            }
+            
+            if(other.tag == "Torchwood")
+            {
+                damage += other.GetComponent<TorchwoodScript>().damageIncrease;
+                GetComponent<SpriteRenderer>().sprite = other.GetComponent<TorchwoodScript>().firePeaSprite;
+                slow = 0;
+                slowTime = 0;
+                isOnFire = true;
             }
         }
     }

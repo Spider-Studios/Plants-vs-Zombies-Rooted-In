@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 727369761}
   - component: {fileID: 6852047012922348482}
   m_Layer: 0
-  m_Name: Pea Shooter
+  m_Name: Repeater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +34,7 @@ Transform:
   m_LocalScale: {x: 0.17283525, y: 0.17283525, z: 0.17283526}
   m_Children:
   - {fileID: 6683730700520231442}
+  - {fileID: 5723350014271508341}
   - {fileID: 6349149538713068641}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,8 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3171280387414100904, guid: 0f3362fd4eb277941b89fb1f43c9ac0a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef8a0b8881c85d74cb3c47cf8d71a19b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,10 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   sellValue: 0
-  description: 'Peashooters are your first line of defence.
-
-    They shoot peas
-    at attacking zombies.'
+  description: Repeater description
   range: 20
   timeBetweenAttacks: 1.5
   targeting: 0
@@ -120,6 +117,7 @@ MonoBehaviour:
   slowTime: 0
   projectileSpawn:
   - {fileID: 6683730700520231442}
+  - {fileID: 5723350014271508341}
   sunReward: 0
   canBePlacedOn: 0
   upgradePath1:
@@ -177,7 +175,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810939519633661078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7bc56238eb1bab24e944f456658a01c5, type: 2}
   m_CullingMode: 0
@@ -197,8 +195,7 @@ AudioSource:
   m_GameObject: {fileID: 810939519633661078}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: d5ed46ec7de4fb74cac99e927064dcc6,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f6022c37a571c104cbc1a0c702b35b07, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
@@ -309,11 +306,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863764386778993063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.78, y: 0.15, z: 0}
+  m_LocalPosition: {x: 1.63, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4425373851766026035}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5136799526839942880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5723350014271508341}
+  m_Layer: 2
+  m_Name: Projectile Spawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5723350014271508341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136799526839942880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.69, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4425373851766026035}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8974253829390723509
 GameObject:
@@ -346,7 +373,7 @@ Transform:
   m_Children:
   - {fileID: 6948119047624533806}
   m_Father: {fileID: 4425373851766026035}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &7732778108253527078
 CircleCollider2D:

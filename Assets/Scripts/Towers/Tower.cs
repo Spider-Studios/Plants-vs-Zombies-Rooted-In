@@ -20,13 +20,14 @@ namespace PvZRI.Towers
         [Header("Attacking")]
         public float range = 1;
         public float timeBetweenAttacks = 1;
-        float timeSinceLastAttack;
+        [HideInInspector]
+        public float timeSinceLastAttack;
         public enum targetingType { first, last, strongest, weakest };
         public targetingType targeting;
 
         [Space]
         [Header("Projectile")]
-        public GameObject projectile = null;
+        public Projectile projectile = null;
         public float damage;
         public float projectileSpeed;
         [Tooltip("How many zombies can the projectile pass through")]
@@ -50,12 +51,12 @@ namespace PvZRI.Towers
         public int path1Purchased;
 
         public int killCount = 0;
+        
+        public List<GameObject> targets = new List<GameObject>();
+        public Transform shootingAt = null;
 
         [HideInInspector]
-        public List<GameObject> targets = new List<GameObject>();
-        Transform shootingAt = null;
-
-        CircleCollider2D sightRange = null;
+        public CircleCollider2D sightRange = null;
 
         SelectTower selectTower = null;
 
@@ -95,7 +96,7 @@ namespace PvZRI.Towers
             rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
         }
 
-        private void LookAtTargets()
+        public void LookAtTargets()
         {
             //if the list is not empty
             if (targets.Count != 0)
@@ -162,10 +163,11 @@ namespace PvZRI.Towers
                 timeSinceLastAttack = Time.time;
                 for (int i = 0; i < projectileSpawn.Length; i++)
                 {
-                    GameObject shot = Instantiate(projectile, projectileSpawn[i].position, Quaternion.identity);
+                    Projectile shot = Instantiate(projectile, projectileSpawn[i].position, projectileSpawn[i].transform.rotation);
                     shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
                     Projectile proj = shot.GetComponent<Projectile>();
                     proj.damage = damage;
+                    proj.speed = projectileSpeed;
                     proj.health = projectileHealth;
                     proj.slow = slowAmount;
                     proj.slowTime = slowTime;

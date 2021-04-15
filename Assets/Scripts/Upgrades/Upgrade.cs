@@ -22,6 +22,8 @@ public class Upgrade : ScriptableObject
     public int projectileHealthUpgrade;
     [Space]
     public int sunRewardUpgrade;
+    [Space]
+    public Projectile changeProjectileTo;
 
     public void AddUpgrades()
     {
@@ -38,6 +40,8 @@ public class Upgrade : ScriptableObject
             towerToUpgrade.slowAmount += projectileSlowUpgrade;
             towerToUpgrade.slowTime += projectileSlowDurationUpgrade;
             towerToUpgrade.sunReward += sunRewardUpgrade;
+            towerToUpgrade.projectile = changeProjectileTo;
+
 
             towerToUpgrade.sellValue += cost / 2;
             towerToUpgrade.path1Purchased++;

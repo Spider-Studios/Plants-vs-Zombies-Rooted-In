@@ -106,7 +106,7 @@ MonoBehaviour:
   range: 5
   timeBetweenAttacks: 1.5
   targeting: 0
-  projectile: {fileID: 2366004677586742330, guid: 3475a2cab1a259245ba7de84456266ed,
+  projectile: {fileID: 2366004677586742329, guid: 3475a2cab1a259245ba7de84456266ed,
     type: 3}
   damage: 1
   projectileSpeed: 20
@@ -125,6 +125,7 @@ MonoBehaviour:
   path1Purchased: 0
   killCount: 0
   targets: []
+  sightRange: {fileID: 0}
   rangeDisplay: {fileID: 0}
 --- !u!58 &4513153495644937650
 CircleCollider2D:
