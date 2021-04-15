@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 82dea3ae59d03ad47a5a4ad326fdb65f
+guid: ffe1298564e5ad2479abc04f68890f57
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2504715352003252112
-    second: Jalapeno Anim_0
+      213: 3630310278284680748
+    second: BucketHead Zombie Anim_0
   - first:
-      213: 5631526322835288420
-    second: Jalapeno Anim_1
+      213: -8716067737228537038
+    second: BucketHead Zombie Anim_1
   - first:
-      213: 5861840022812622749
-    second: Jalapeno Anim_2
-  - first:
-      213: -5996220296225610785
-    second: Jalapeno Anim_3
-  - first:
-      213: -5650996177746364027
-    second: Jalapeno Anim_4
-  - first:
-      213: -2099571482036960227
-    second: Jalapeno Anim_5
+      213: -3390793869827264678
+    second: BucketHead Zombie Anim_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,49 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jalapeno Anim_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2048
-        width: 1024
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09f0f93975982c220800000000000000
-      internalID: 2504715352003252112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jalapeno Anim_1
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 2048
-        width: 1024
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 461fbdf7a53372e40800000000000000
-      internalID: 5631526322835288420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jalapeno Anim_2
+      name: BucketHead Zombie Anim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -165,14 +114,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9ff9e18170795150800000000000000
-      internalID: 5861840022812622749
+      spriteID: c2e9b91c6f3716230800000000000000
+      internalID: 3630310278284680748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jalapeno Anim_3
+      name: BucketHead Zombie Anim_1
       rect:
         serializedVersion: 2
         x: 1024
@@ -186,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd32c70f86529cca0800000000000000
-      internalID: -5996220296225610785
+      spriteID: 233104c929e4a0780800000000000000
+      internalID: -8716067737228537038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jalapeno Anim_4
+      name: BucketHead Zombie Anim_2
       rect:
         serializedVersion: 2
         x: 0
@@ -207,29 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5897656aae0a391b0800000000000000
-      internalID: -5650996177746364027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jalapeno Anim_5
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 1024
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1485a07cd2dcd2e0800000000000000
-      internalID: -2099571482036960227
+      spriteID: a5faf5ac0fa71f0d0800000000000000
+      internalID: -3390793869827264678
       vertices: []
       indices: 
       edges: []
@@ -237,7 +165,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f8030c249d2faec43a5f8d1854fe4300
+    spriteID: 947687773b0322e4a8e5072ddaff2e06
     internalID: 0
     vertices: []
     indices: 
