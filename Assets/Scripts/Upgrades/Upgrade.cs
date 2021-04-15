@@ -40,6 +40,8 @@ public class Upgrade : ScriptableObject
             towerToUpgrade.slowAmount += projectileSlowUpgrade;
             towerToUpgrade.slowTime += projectileSlowDurationUpgrade;
             towerToUpgrade.sunReward += sunRewardUpgrade;
+
+            if(changeProjectileTo != null)
             towerToUpgrade.projectile = changeProjectileTo;
 
 

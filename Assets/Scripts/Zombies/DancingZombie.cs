@@ -49,7 +49,6 @@ namespace PvZRI.Zombies
                 //spawn followers
                 GameObject spawned = Instantiate(followerPrefab, transform.GetChild(0).transform.position, Quaternion.identity, null);
                 spawned.GetComponent<ZombieControl>().waypointIndex = this.waypointIndex -1;
-                print("a");
             }
 
             if (other.gameObject.tag == "House")
