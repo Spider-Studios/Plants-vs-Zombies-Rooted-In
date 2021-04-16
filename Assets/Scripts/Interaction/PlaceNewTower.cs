@@ -10,6 +10,20 @@ namespace PvZRI.Interaction
 {
     public class PlaceNewTower : MonoBehaviour
     {
+        #region Singleton
+        public static PlaceNewTower instance;
+
+        void Awake()
+        {
+            if (instance != null)
+            {
+                Debug.LogWarning("More than one instance of place new tower found");
+                return;
+            }
+            instance = this;
+        }
+        #endregion
+
         Tower towerToSpawn = null;
         bool showSprite = false;
         private bool textBlink = false;

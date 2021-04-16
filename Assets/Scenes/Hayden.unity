@@ -2594,10 +2594,35 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5299511600188389950, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600188389950, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600188389950, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 5299511600457023732, guid: ef638432ba04f0447a22b86345bd1c48,
         type: 3}
       propertyPath: m_CullTransparentMesh
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600457023734, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -893
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600512577909, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 893
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef638432ba04f0447a22b86345bd1c48, type: 3}

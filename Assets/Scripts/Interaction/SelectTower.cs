@@ -41,11 +41,15 @@ namespace PvZRI.Interaction
 
         void Update()
         {
-            if (Input.GetMouseButtonDown(1))
+            string mouseOver = PlaceNewTower.instance.CheckWhatMouseIsOver();
+            if (Input.GetMouseButtonDown(0))
             {
-                if (selected != null)
+                if (mouseOver != "Plant")
                 {
-                    HideSelectedPanel();
+                    if (selected != null)
+                    {
+                        HideSelectedPanel();
+                    }
                 }
             }
 

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6852047012922348482}
   m_Layer: 0
   m_Name: Sunflower
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   description: Sunflowers produce Sun at the end of each round.
   range: 2
   timeBetweenAttacks: 0
+  timeSinceLastAttack: 0
   targeting: 0
   projectile: {fileID: 0}
   damage: 0
@@ -126,6 +127,8 @@ MonoBehaviour:
   path1Purchased: 0
   killCount: 0
   targets: []
+  shootingAt: {fileID: 0}
+  sightRange: {fileID: 0}
   rangeDisplay: {fileID: 0}
 --- !u!58 &4513153495644937650
 CircleCollider2D:

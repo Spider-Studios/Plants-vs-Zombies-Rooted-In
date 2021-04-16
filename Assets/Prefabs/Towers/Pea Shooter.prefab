@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6852047012922348482}
   m_Layer: 0
   m_Name: Pea Shooter
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
     at attacking zombies.'
   range: 20
   timeBetweenAttacks: 1.5
+  timeSinceLastAttack: 0
   targeting: 0
   projectile: {fileID: 2366004677586742329, guid: ffa6bb0d833fab54880b772e14df549f,
     type: 3}
@@ -130,6 +131,7 @@ MonoBehaviour:
   path1Purchased: 0
   killCount: 0
   targets: []
+  shootingAt: {fileID: 0}
   sightRange: {fileID: 0}
   rangeDisplay: {fileID: 0}
 --- !u!58 &4513153495644937650
