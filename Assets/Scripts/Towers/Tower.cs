@@ -164,7 +164,8 @@ namespace PvZRI.Towers
                 for (int i = 0; i < projectileSpawn.Length; i++)
                 {
                     Projectile shot = Instantiate(projectile, projectileSpawn[i].position, projectileSpawn[i].transform.rotation);
-                    shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
+                    //shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
+                    shot.GetComponent<Rigidbody2D>().velocity = projectileSpawn[i].right * projectileSpeed;
                     Projectile proj = shot.GetComponent<Projectile>();
                     proj.damage = damage;
                     proj.speed = projectileSpeed;
