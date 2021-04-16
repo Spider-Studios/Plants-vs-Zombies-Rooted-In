@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
             GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Zombie");
 
             //end of the wave
-            if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber - 1 != waves.Length)
+            if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
             {
                 positionInWave = 0;
                 startWaveButton.SetActive(true);
