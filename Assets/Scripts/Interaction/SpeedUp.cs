@@ -14,8 +14,11 @@ public class SpeedUp : MonoBehaviour
             return;
         }
         instance = this;
+        Time.timeScale = 1;
     }
-#endregion
+    #endregion
+
+   public bool speedup;
     // Update is called once per frame
     void Update()
     {
@@ -26,13 +29,18 @@ public class SpeedUp : MonoBehaviour
         }
     public void DoubleTime()
     {
+        print(Time.timeScale);
         if (Time.timeScale == 1)
         {
-            Time.timeScale++;
+            Time.timeScale = 2;
+            speedup = true;
+            return;
         }
-        else
+        if (Time.timeScale == 2)
         {
-            Time.timeScale--;
+            Time.timeScale = 1;
+            speedup = false;
+
         }
     }
 }
