@@ -24,6 +24,9 @@ public class WaveSpawner : MonoBehaviour
     public GameObject dayTimeSound;
     public GameObject idleSound;
     public GameObject winMessage;
+    public GameObject shopButtons;
+    public GameObject upgradeButtons;
+    public GameObject speedUpButton;
 
     private int positionInWave = 0;
     private Wave currentWave;
@@ -71,6 +74,11 @@ public class WaveSpawner : MonoBehaviour
                 winMessage.SetActive(true);
                 Destroy(idleSound);
                 Destroy(dayTimeSound);
+                Destroy(startWaveButton);
+                Destroy(shopButtons);
+                Destroy(upgradeButtons);
+                Destroy(speedUpButton);
+                Time.timeScale = 1;
             }
         }
     }

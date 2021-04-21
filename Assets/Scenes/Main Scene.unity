@@ -8460,6 +8460,11 @@ MonoBehaviour:
     - {fileID: 382730791750093766, guid: 8eb10bb6d46512544ac492ee4e850adc, type: 3}
     spawnInterval: 0.1
     reward: 75
+  - waveName: 26
+    enemies:
+    - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
+    spawnInterval: 0.1
+    reward: 0
   spawnPoints:
   - {fileID: 1521026279}
   startWaveButton: {fileID: 2094375580}
@@ -8470,6 +8475,9 @@ MonoBehaviour:
   dayTimeSound: {fileID: 1413447096}
   idleSound: {fileID: 130258671}
   winMessage: {fileID: 1060477592}
+  shopButtons: {fileID: 1305738504}
+  upgradeButtons: {fileID: 1731588087}
+  speedUpButton: {fileID: 62849485}
   currentWaveDisplay: {fileID: 1652775166}
   isSpawning: 0
 --- !u!82 &1521026281
