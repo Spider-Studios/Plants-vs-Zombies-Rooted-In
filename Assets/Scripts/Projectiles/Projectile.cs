@@ -64,8 +64,8 @@ namespace PvZRI.Towers
             
             if(other.tag == "Torchwood")
             {
-                damage += other.GetComponent<TorchwoodScript>().damageIncrease;
-                GetComponent<SpriteRenderer>().sprite = other.GetComponent<TorchwoodScript>().firePeaSprite;
+                damage += other.transform.parent.GetComponent<TorchwoodScript>().damageIncrease;
+                GetComponent<SpriteRenderer>().sprite = other.transform.parent.GetComponent<TorchwoodScript>().firePeaSprite;
                 slow = 0;
                 slowTime = 0;
                 isOnFire = true;
