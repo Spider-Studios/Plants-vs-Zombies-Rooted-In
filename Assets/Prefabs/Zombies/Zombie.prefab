@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7831621989952849193}
   - component: {fileID: 7831621989952849192}
   - component: {fileID: 7831621989952849195}
-  - component: {fileID: 431716176}
   - component: {fileID: -8143837390196957095}
   - component: {fileID: 4617812170248785679}
+  - component: {fileID: 6665229633102198293}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -144,25 +144,6 @@ MonoBehaviour:
   zombieHitSound: {fileID: 4617812170248785679}
   distanceTravelled: 0
   previousPosition: {x: 0, y: 0, z: 0}
---- !u!95 &431716176
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7831621989952849199}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 03168f452a7027c439c3783be4e927aa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &-8143837390196957095
 Rigidbody2D:
   serializedVersion: 4
@@ -280,3 +261,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6665229633102198293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7831621989952849199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1878d2640e35954d80f2fb9c2ada667, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

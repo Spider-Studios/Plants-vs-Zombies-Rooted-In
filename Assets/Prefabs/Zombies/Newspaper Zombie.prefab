@@ -41,6 +41,25 @@ MonoBehaviour:
   zombieHitSound: {fileID: 0}
   distanceTravelled: 0
   previousPosition: {x: 0, y: 0, z: 0}
+--- !u!95 &2416933404025729975
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902652705648067920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d7bfee300a59b346bdc6c5df62dafb9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6929174430790041727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,6 +141,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7831621989952849195, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
     - {fileID: -70652344059559247, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
+    - {fileID: 6665229633102198293, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
 --- !u!1 &902652705648067920 stripped
 GameObject:
