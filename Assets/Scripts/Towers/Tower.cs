@@ -19,11 +19,12 @@ namespace PvZRI.Towers
         [Space]
         [Header("Attacking")]
         public float range = 1;
-        public float timeBetweenAttacks = 1;
+        public float attackSpeed = 1;
         [HideInInspector]
         public float timeSinceLastAttack;
         public enum targetingType { first, last, strongest, weakest };
         public targetingType targeting;
+        public bool rotates = true;
 
         [Space]
         [Header("Projectile")]
@@ -148,17 +149,20 @@ namespace PvZRI.Towers
 
                 shootingAt = t.transform;
 
-                Vector3 lookat = transform.right = shootingAt.position - transform.position;
-                lookat.z = 0;
+                if (rotates)
+                {
+                    Vector3 lookat = transform.right = shootingAt.position - transform.position;
+                    lookat.z = 0;
 
                 transform.right = lookat;
+                }
                 //shoot 
             }
         }
 
         public void ShootAtTarget(Transform target)
         {
-            if (Time.time - timeSinceLastAttack > 1 / timeBetweenAttacks)
+            if (Time.time - timeSinceLastAttack > 1 / attackSpeed)
             {
                 timeSinceLastAttack = Time.time;
                 for (int i = 0; i < projectileSpawn.Length; i++)

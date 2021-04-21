@@ -42,7 +42,6 @@ namespace PvZRI.Interaction
         void Update()
         {
             string mouseOver = PlaceNewTower.instance.CheckWhatMouseIsOver();
-            print(mouseOver);
 
             if (mouseOver != "Plant" && Input.GetMouseButtonDown(0))
             {

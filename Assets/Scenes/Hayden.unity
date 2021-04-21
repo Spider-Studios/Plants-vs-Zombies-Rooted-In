@@ -930,7 +930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Snow Pea (75)
+  m_Text: Gatling pea
 --- !u!222 &577266341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sunflower (100)
+  m_Text: Starfruit
 --- !u!222 &593504650
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 1412263363}
   - component: {fileID: 1412263366}
   m_Layer: 5
-  m_Name: Sunflower
+  m_Name: Starfruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2254,7 +2254,7 @@ MonoBehaviour:
         m_MethodName: ShowHoverSprite
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6085887496486104741, guid: 92acde12d21431d48aa2dd15365ab7db,
+          m_ObjectArgument: {fileID: 6085887496486104741, guid: 4c2168d678629a041b249bd93fbbc290,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: PvZRI.Towers.Tower, Assembly-CSharp
           m_IntArgument: 0
@@ -2618,6 +2618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -893
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299511600512577909, guid: ef638432ba04f0447a22b86345bd1c48,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5299511600512577909, guid: ef638432ba04f0447a22b86345bd1c48,
         type: 3}
@@ -3559,7 +3564,7 @@ GameObject:
   - component: {fileID: 1893586237}
   - component: {fileID: 1893586240}
   m_Layer: 5
-  m_Name: Snow Pea
+  m_Name: gatling pea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3634,7 +3639,7 @@ MonoBehaviour:
         m_MethodName: ShowHoverSprite
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6085887496486104741, guid: 69f4900a63ffd8f488cbc19b5a485596,
+          m_ObjectArgument: {fileID: 6085887496486104741, guid: bd791bc54e88b564db5a063455638773,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: PvZRI.Towers.Tower, Assembly-CSharp
           m_IntArgument: 0
@@ -3986,6 +3991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9ad945f828dad4591006a4b0d4d1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedup: 0
 --- !u!1 &2027265721
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,7 +4027,7 @@ RectTransform:
   - {fileID: 1926918591}
   - {fileID: 437912147}
   m_Father: {fileID: 1361944946}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

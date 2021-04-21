@@ -36,7 +36,7 @@ public class TorchwoodScript : Tower
 
     public void CreateRing()
     {
-        if (Time.time - timeSinceLastAttack > 1 / timeBetweenAttacks)
+        if (Time.time - timeSinceLastAttack > 1 / attackSpeed)
         {
             timeSinceLastAttack = Time.time;
             Projectile shot = Instantiate(projectile, new Vector3(projectileSpawn[0].position.x, projectileSpawn[0].position.y, -6), projectileSpawn[0].transform.rotation);

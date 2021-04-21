@@ -34,7 +34,7 @@ public class Upgrade : ScriptableObject
             Tower towerToUpgrade = SelectTower.instance.selected;
             towerToUpgrade.range += rangeUpgrade;
             towerToUpgrade.damage += damageUpgrade;
-            towerToUpgrade.timeBetweenAttacks += attackSpeedUpgrade;
+            towerToUpgrade.attackSpeed += attackSpeedUpgrade;
             towerToUpgrade.projectileHealth += projectileHealthUpgrade;
             towerToUpgrade.projectileSpeed += projectileSpeedUpgrade;
             towerToUpgrade.slowAmount += projectileSlowUpgrade;
