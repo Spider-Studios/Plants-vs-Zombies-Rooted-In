@@ -42,20 +42,20 @@ namespace PvZRI.Interaction
         void Update()
         {
             string mouseOver = PlaceNewTower.instance.CheckWhatMouseIsOver();
-            if (Input.GetMouseButtonDown(0))
+            print(mouseOver);
+
+            if (mouseOver != "Plant" && Input.GetMouseButtonDown(0))
             {
-                if (mouseOver != "Plant")
+                if (selected != null)
                 {
-                    if (selected != null)
-                    {
-                        HideSelectedPanel();
-                    }
+                    if(!PlaceNewTower.instance.IsPointerOverUIObject())
+                    HideSelectedPanel();
                 }
             }
 
             if (selected != null)
             {
-                if(Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     HideSelectedPanel();
                     return;
@@ -132,7 +132,7 @@ namespace PvZRI.Interaction
             targetLast.onClick.RemoveAllListeners();
             targetFirst.onClick.AddListener(selected.TargetFirst);
             targetLast.onClick.AddListener(selected.TargetLast);
-            
+
         }
 
         public void Button1Clicked()
@@ -142,7 +142,7 @@ namespace PvZRI.Interaction
 
         public void Button2Clicked()
         {
-            selected.upgradePath1[1].AddUpgrades();            
+            selected.upgradePath1[1].AddUpgrades();
         }
 
         public void Button3Clicked()

@@ -18,6 +18,7 @@ TagManager:
   - House Entrance
   - Dancing Spawn
   - Torchwood
+  - Button
   layers:
   - Default
   - TransparentFX
