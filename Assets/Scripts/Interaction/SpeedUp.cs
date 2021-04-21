@@ -29,7 +29,6 @@ public class SpeedUp : MonoBehaviour
         }
     public void DoubleTime()
     {
-        print(Time.timeScale);
         if (Time.timeScale == 1)
         {
             Time.timeScale = 2;
