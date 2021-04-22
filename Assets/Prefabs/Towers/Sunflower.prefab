@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 810939519633661078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.9634, y: 1.5541, z: -0.12}
-  m_LocalScale: {x: 0.17778528, y: 0.17379628, z: 0.39720997}
+  m_LocalScale: {x: 0.1793925, y: 0.1793925, z: 0.1793925}
   m_Children:
   - {fileID: 6683730700520231442}
   - {fileID: 6349149538713068641}
@@ -104,11 +104,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   sellValue: 0
-  description: Sunflowers produce Sun at the end of each round.
+  description: Sunflowers produce 25 Sun at the end of each round.
   range: 2
-  timeBetweenAttacks: 0
+  attackSpeed: 1
   timeSinceLastAttack: 0
   targeting: 0
+  rotates: 1
   projectile: {fileID: 0}
   damage: 0
   projectileSpeed: 0

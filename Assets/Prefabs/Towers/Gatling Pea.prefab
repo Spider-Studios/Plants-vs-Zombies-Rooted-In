@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 810939519633661078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.84, y: 0.41, z: -0.12}
-  m_LocalScale: {x: 0.17283525, y: 0.17283525, z: 0.17283526}
+  m_LocalScale: {x: 0.1793925, y: 0.1793925, z: 0.1793925}
   m_Children:
   - {fileID: 6683730700520231442}
   - {fileID: 6349149538713068641}
@@ -105,7 +105,7 @@ MonoBehaviour:
   cost: 100
   sellValue: 0
   description: gatling description
-  range: 20
+  range: 15
   attackSpeed: 4
   timeSinceLastAttack: 0
   targeting: 0
@@ -391,7 +391,7 @@ PrefabInstance:
     - target: {fileID: 4972910972245526339, guid: 6bd93f499428d764ca1579f713808115,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6948119047692095018, guid: 6bd93f499428d764ca1579f713808115,
         type: 3}

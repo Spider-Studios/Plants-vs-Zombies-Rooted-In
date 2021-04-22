@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Automatic Peas
   m_EditorClassIdentifier: 
   cost: 0
+  description: +5 projectile speed
   rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0
-  projectileSpeedUpgrade: 0
+  projectileSpeedUpgrade: 5
   projectileSlowUpgrade: 0
   projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
+  sunRewardUpgrade: 0
+  changeProjectileTo: {fileID: 0}

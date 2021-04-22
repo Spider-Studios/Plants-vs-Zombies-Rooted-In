@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283b7e93e616cef47b354fe5c2710470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sun: 999999
+  sun: 99999999
   sunDisplay: {fileID: 884126384}
 --- !u!114 &63547123
 MonoBehaviour:
@@ -9559,6 +9559,9 @@ MonoBehaviour:
   dayTimeSound: {fileID: 1978737321}
   idleSound: {fileID: 905126700}
   winMessage: {fileID: 1559390940}
+  shopButtons: {fileID: 0}
+  upgradeButtons: {fileID: 0}
+  speedUpButton: {fileID: 0}
   currentWaveDisplay: {fileID: 1588946384}
   isSpawning: 0
 --- !u!82 &1728692355

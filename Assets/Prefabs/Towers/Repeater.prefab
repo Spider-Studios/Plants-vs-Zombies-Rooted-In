@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 810939519633661078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.84, y: 0.41, z: -0.12}
-  m_LocalScale: {x: 0.17283525, y: 0.17283525, z: 0.17283526}
+  m_LocalScale: {x: 0.1793925, y: 0.1793925, z: 0.1793925}
   m_Children:
   - {fileID: 6683730700520231442}
   - {fileID: 5723350014271508341}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef8a0b8881c85d74cb3c47cf8d71a19b, type: 3}
+  m_Sprite: {fileID: 366083106736106878, guid: 98cb180a25cb728498e51f507e095ebf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   cost: 100
   sellValue: 0
   description: Repeater description
-  range: 20
+  range: 15
   attackSpeed: 1
   timeSinceLastAttack: 0
   targeting: 0
