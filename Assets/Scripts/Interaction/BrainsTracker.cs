@@ -31,7 +31,7 @@ public class BrainsTracker : MonoBehaviour
     private bool audioPlayed = false;
     private void Update()
     {
-        brainsDisplay.text = "Brains: " + brains;
+        brainsDisplay.text = "" + brains;
         if (brains <= 0)
         {
             gameOver.SetActive(true);

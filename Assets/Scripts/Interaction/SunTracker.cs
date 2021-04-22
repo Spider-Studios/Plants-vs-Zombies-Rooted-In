@@ -33,7 +33,7 @@ public class SunTracker : MonoBehaviour
 
     private void Update()
     {
-        sunDisplay.text = "Sun: " + sun;
+        sunDisplay.text = "" + sun;
     }
 
     public void AddSun(int amount)
