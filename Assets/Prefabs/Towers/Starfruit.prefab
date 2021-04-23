@@ -142,7 +142,7 @@ MonoBehaviour:
   timeSinceLastAttack: 0
   targeting: 0
   rotates: 0
-  projectile: {fileID: 2366004677586742329, guid: ffa6bb0d833fab54880b772e14df549f,
+  projectile: {fileID: 2366004677586742329, guid: 3f388e11a5aa3f242b3d87bc087325fc,
     type: 3}
   damage: 1
   projectileSpeed: 20
