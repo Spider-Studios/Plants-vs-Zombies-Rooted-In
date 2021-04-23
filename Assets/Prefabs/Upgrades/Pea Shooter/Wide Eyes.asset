@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wide Eyes
   m_EditorClassIdentifier: 
   cost: 10
+  killsNeeded: 1
   description: +10 range
   rangeUpgrade: 10
   damageUpgrade: 0
@@ -22,3 +23,4 @@ MonoBehaviour:
   projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
   sunRewardUpgrade: 0
+  changeProjectileTo: {fileID: 0}

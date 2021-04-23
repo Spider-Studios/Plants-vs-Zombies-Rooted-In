@@ -7,6 +7,7 @@ using System.Text;
 public class Upgrade : ScriptableObject
 {
     public int cost;
+    public int killsNeeded;
     [Multiline]
     public string description;
     [Space]
@@ -28,10 +29,11 @@ public class Upgrade : ScriptableObject
     public void AddUpgrades()
     {
         SunTracker sunTracker = SunTracker.instance;
-        if (sunTracker.HaveEnoughSun(cost))
+
+        Tower towerToUpgrade = SelectTower.instance.selected;
+        if (sunTracker.HaveEnoughSun(cost) && towerToUpgrade.killCount >= killsNeeded)
         {
             sunTracker.MinusSun(cost);
-            Tower towerToUpgrade = SelectTower.instance.selected;
             towerToUpgrade.range += rangeUpgrade;
             towerToUpgrade.damage += damageUpgrade;
             towerToUpgrade.attackSpeed += attackSpeedUpgrade;
@@ -58,6 +60,7 @@ public class Upgrade : ScriptableObject
     {
         StringBuilder builder = new StringBuilder();
         builder.Append(cost + " Sun").AppendLine();
+        builder.Append("Kills needed: " + killsNeeded).AppendLine();
         builder.Append(description);
         return builder.ToString();
     }
