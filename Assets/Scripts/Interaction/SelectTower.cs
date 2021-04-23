@@ -64,7 +64,7 @@ namespace PvZRI.Interaction
 
                 selectedPanel.transform.Find("Kill Count").GetComponent<Text>().text = "Zombies Killed: " + selected.killCount;
 
-                selectedPanel.transform.Find("Sell For").GetComponent<Text>().text = "Sell For: " + selected.sellValue;
+                selectedPanel.transform.Find("Sell Button").GetComponentInChildren<Text>().text = "Sell For: " + selected.sellValue;
 
                 //set the buttons text to the next upgrade
                 upgrade1.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[0].name + "\n Cost: " + selected.upgradePath1[0].cost;
