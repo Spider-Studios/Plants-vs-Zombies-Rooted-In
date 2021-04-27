@@ -4055,7 +4055,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Zombie, moves slowly at first, moves twice as fast  after its newspaper
+    is destroyed.
 --- !u!222 &577934859
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4292,7 +4293,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Boss zombie has a lot of health and lots of damage.
 --- !u!222 &613632373
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6889,9 +6890,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1010291590}
   m_Father: {fileID: 1222336597}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6931,7 +6933,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Very strong, moves fast.
 --- !u!222 &863047157
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8032,16 +8034,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010291589}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1222336597}
-  m_RootOrder: 4
+  m_Father: {fileID: 863047155}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 521, y: -203}
+  m_AnchoredPosition: {x: -27.488403, y: 237.26196}
   m_SizeDelta: {x: 285.4824, y: 57.7228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1010291591
@@ -9208,7 +9210,6 @@ RectTransform:
   - {fileID: 1064517046}
   - {fileID: 1312231959}
   - {fileID: 299933882}
-  - {fileID: 1010291590}
   - {fileID: 863047155}
   m_Father: {fileID: 1066282470}
   m_RootOrder: 7
@@ -11416,7 +11417,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Carries an exploding jack-in-the-box and moves twice as fast as normal
+    Zombies. It shakes while cranking it up.
 --- !u!222 &1493790383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11654,7 +11656,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Zombie that has a bucket is more resistant to damage.
 --- !u!222 &1515265469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14127,7 +14129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\tA normal zombie."
 --- !u!222 &1920243390
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14547,7 +14549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Dances as it walks, summons backup dancers.
 --- !u!222 &1947794986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15797,7 +15799,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Zombie that uses a traffic cone to protect itself.
 --- !u!222 &2143727785
 CanvasRenderer:
   m_ObjectHideFlags: 0
