@@ -11418,7 +11418,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Carries an exploding jack-in-the-box and moves twice as fast as normal
-    Zombies. It shakes while cranking it up.
+    Zombies. It deals significant damage.
 --- !u!222 &1493790383
 CanvasRenderer:
   m_ObjectHideFlags: 0
