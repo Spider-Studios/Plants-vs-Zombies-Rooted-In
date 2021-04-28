@@ -2511,7 +2511,7 @@ MonoBehaviour:
     - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
     - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
     - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
-    spawnInterval: 1.5
+    spawnInterval: 3.5
     reward: 20
   - waveName: 2
     enemies:
@@ -2521,7 +2521,7 @@ MonoBehaviour:
     - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
     - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
-    spawnInterval: 1.5
+    spawnInterval: 3
     reward: 20
   - waveName: 3
     enemies:
@@ -2537,7 +2537,7 @@ MonoBehaviour:
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
-    spawnInterval: 1.5
+    spawnInterval: 2
     reward: 25
   - waveName: 4
     enemies:
@@ -2559,7 +2559,7 @@ MonoBehaviour:
     - {fileID: 573816657892426099, guid: d48b057b8e3ffdc4e8a86365a85ac85c, type: 3}
     - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
     - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
-    spawnInterval: 1.25
+    spawnInterval: 2
     reward: 25
   - waveName: 5
     enemies:
@@ -2588,7 +2588,7 @@ MonoBehaviour:
     - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
     - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
     - {fileID: 7415016591982449439, guid: f05ca60d27483244bb78f1138eba005b, type: 3}
-    spawnInterval: 1.25
+    spawnInterval: 2
     reward: 30
   - waveName: 6
     enemies:
