@@ -31,8 +31,13 @@ namespace PvZRI.Interaction
 
         public Button targetFirst, targetLast;
 
+        public Text killsText;
+
+        Color baseColour;
+
         void Start()
         {
+            baseColour = killsText.color;
             upgrade1 = selectedPanel.transform.Find("Upgrade 1").gameObject;
             upgrade2 = selectedPanel.transform.Find("Upgrade 2").gameObject;
             upgrade3 = selectedPanel.transform.Find("Upgrade 3").gameObject;
@@ -71,49 +76,48 @@ namespace PvZRI.Interaction
                 upgrade2.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[1].name + "\n Cost: " + selected.upgradePath1[1].cost;
                 upgrade3.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[2].name + "\n Cost: " + selected.upgradePath1[2].cost;
                 upgrade4.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[3].name + "\n Cost: " + selected.upgradePath1[3].cost;
-
-
-                switch (selected.path1Purchased)
-                {
-                    case 1:
-                        //if (sunTracker.sun >= selected.upgradePath1[0].cost)
-                        //{
-                        //    upgrade1.GetComponent<Button>().interactable = true;
-                        //}
-                        //else
-                        //{
-                        //    upgrade1.GetComponent<Button>().interactable = false;
-                        //}
-                        upgrade1.GetComponent<Button>().interactable = false;
-                        upgrade2.GetComponent<Button>().interactable = true;
-                        upgrade3.GetComponent<Button>().interactable = false;
-                        upgrade4.GetComponent<Button>().interactable = false;
-                        break;
-                    case 2:
-                        upgrade1.GetComponent<Button>().interactable = false;
-                        upgrade2.GetComponent<Button>().interactable = false;
-                        upgrade3.GetComponent<Button>().interactable = true;
-                        upgrade4.GetComponent<Button>().interactable = false;
-                        break;
-                    case 3:
-                        upgrade1.GetComponent<Button>().interactable = false;
-                        upgrade2.GetComponent<Button>().interactable = false;
-                        upgrade3.GetComponent<Button>().interactable = false;
-                        upgrade4.GetComponent<Button>().interactable = true;
-                        break;
-                    case 0:
-                        upgrade1.GetComponent<Button>().interactable = true;
-                        upgrade2.GetComponent<Button>().interactable = false;
-                        upgrade3.GetComponent<Button>().interactable = false;
-                        upgrade4.GetComponent<Button>().interactable = false;
-                        break;
-                    default:
-                        upgrade1.GetComponent<Button>().interactable = false;
-                        upgrade2.GetComponent<Button>().interactable = false;
-                        upgrade3.GetComponent<Button>().interactable = false;
-                        upgrade4.GetComponent<Button>().interactable = false;
-                        break;
-                }
+                
+                //switch (selected.path1Purchased)
+                //{
+                //    case 1:
+                //        //if (sunTracker.sun >= selected.upgradePath1[0].cost)
+                //        //{
+                //        //    upgrade1.GetComponent<Button>().interactable = true;
+                //        //}
+                //        //else
+                //        //{
+                //        //    upgrade1.GetComponent<Button>().interactable = false;
+                //        //}
+                //        upgrade1.GetComponent<Button>().interactable = false;
+                //        upgrade2.GetComponent<Button>().interactable = true;
+                //        upgrade3.GetComponent<Button>().interactable = false;
+                //        upgrade4.GetComponent<Button>().interactable = false;
+                //        break;
+                //    case 2:
+                //        upgrade1.GetComponent<Button>().interactable = false;
+                //        upgrade2.GetComponent<Button>().interactable = false;
+                //        upgrade3.GetComponent<Button>().interactable = true;
+                //        upgrade4.GetComponent<Button>().interactable = false;
+                //        break;
+                //    case 3:
+                //        upgrade1.GetComponent<Button>().interactable = false;
+                //        upgrade2.GetComponent<Button>().interactable = false;
+                //        upgrade3.GetComponent<Button>().interactable = false;
+                //        upgrade4.GetComponent<Button>().interactable = true;
+                //        break;
+                //    case 0:
+                //        upgrade1.GetComponent<Button>().interactable = true;
+                //        upgrade2.GetComponent<Button>().interactable = false;
+                //        upgrade3.GetComponent<Button>().interactable = false;
+                //        upgrade4.GetComponent<Button>().interactable = false;
+                //        break;
+                //    default:
+                //        upgrade1.GetComponent<Button>().interactable = false;
+                //        upgrade2.GetComponent<Button>().interactable = false;
+                //        upgrade3.GetComponent<Button>().interactable = false;
+                //        upgrade4.GetComponent<Button>().interactable = false;
+                //        break;
+                //}
             }
         }
 
@@ -136,24 +140,67 @@ namespace PvZRI.Interaction
 
         }
 
+
+        public bool HaveEnoughKills(int towerKills, int upgradeKillsNeeded)
+        {
+            if (towerKills >= upgradeKillsNeeded)
+            {
+                return true;
+            }
+            else
+            {
+                StartCoroutine(FlashKillsText());
+                killsText.color = baseColour;
+                return false;
+            }
+        }
+
+        public IEnumerator FlashKillsText()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                killsText.color = Color.red;
+                yield return new WaitForSeconds(.1f);
+                killsText.color = baseColour;
+                yield return new WaitForSeconds(.1f);
+            }
+
+        }
+
         public void Button1Clicked()
         {
-            selected.upgradePath1[0].AddUpgrades();
+            if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[0].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[0].killsNeeded))
+            {
+                selected.upgradePath1[0].AddUpgrades();
+                upgrade1.GetComponent<Button>().interactable = false;
+            }
         }
 
         public void Button2Clicked()
         {
-            selected.upgradePath1[1].AddUpgrades();
+            if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[1].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[1].killsNeeded))
+            {
+                selected.upgradePath1[1].AddUpgrades();
+                upgrade2.GetComponent<Button>().interactable = false;
+            }
         }
 
         public void Button3Clicked()
         {
-            selected.upgradePath1[2].AddUpgrades();
+            if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[2].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[2].killsNeeded))
+            {
+                selected.upgradePath1[2].AddUpgrades();
+                upgrade3.GetComponent<Button>().interactable = false;
+            }
         }
 
         public void Button4Clicked()
         {
-            selected.upgradePath1[3].AddUpgrades();
+            if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[3].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[3].killsNeeded))
+            {
+                selected.upgradePath1[3].AddUpgrades();
+                upgrade4.GetComponent<Button>().interactable = false;
+            }
         }
 
         public void SellSelected()

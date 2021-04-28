@@ -52,7 +52,13 @@ public class Upgrade : ScriptableObject
         }
         else
         {
-            Debug.Log("not enough sun");  
+            Debug.Log("not enough sun / kills");  
+        }
+
+        if (towerToUpgrade.killCount < killsNeeded)
+        {
+            Debug.Log("A");
+            sunTracker.FlashKillsText();
         }
     }
 

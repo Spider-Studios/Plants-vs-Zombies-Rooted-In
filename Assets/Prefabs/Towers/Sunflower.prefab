@@ -104,7 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   sellValue: 0
-  description: Sunflowers produce 25 Sun at the end of each round.
+  description: "Sunflowers produce 25 Sun at the end of each round.\nAttack speed
+    - \nDamage - "
   range: 2
   attackSpeed: 1
   timeSinceLastAttack: 0

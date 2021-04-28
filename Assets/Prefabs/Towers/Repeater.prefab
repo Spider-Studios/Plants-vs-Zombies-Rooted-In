@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   sellValue: 0
-  description: Repeater description
+  description: "Repeater description\nAttack speed - \nDamage - "
   range: 15
   attackSpeed: 1
   timeSinceLastAttack: 0
@@ -123,10 +123,10 @@ MonoBehaviour:
   sunReward: 0
   canBePlacedOn: 0
   upgradePath1:
-  - {fileID: 11400000, guid: 8f0d0ed91e0951846ba0be9d6fdc2a85, type: 2}
-  - {fileID: 11400000, guid: 1629cc983c1acad48a70f8016ce4f9b8, type: 2}
-  - {fileID: 11400000, guid: 6b8e5634f1c2e5141bb1c85a87a6d1ff, type: 2}
-  - {fileID: 11400000, guid: e5625f19e09ba6c428c52eddf4060f6d, type: 2}
+  - {fileID: 11400000, guid: c713aaa79670faa4a922e6e498c1b309, type: 2}
+  - {fileID: 11400000, guid: 92351d01ac909d8479f9c8883fd18c2c, type: 2}
+  - {fileID: 11400000, guid: c193f74a23208744b9c7415896b4f740, type: 2}
+  - {fileID: 11400000, guid: 9a947430765de7b46ac5a5c9958aa414, type: 2}
   path1Purchased: 0
   killCount: 0
   targets: []

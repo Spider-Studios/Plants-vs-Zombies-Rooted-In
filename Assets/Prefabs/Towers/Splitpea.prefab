@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   sellValue: 0
-  description: Splitpea description
+  description: "Splitpea description\nAttack speed - \nDamage - "
   range: 20
   attackSpeed: 1
   timeSinceLastAttack: 0

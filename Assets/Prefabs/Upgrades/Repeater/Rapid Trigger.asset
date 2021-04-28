@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Rapid Trigger
   m_EditorClassIdentifier: 
   cost: 0
+  killsNeeded: 0
+  description: +2 attack speed
   rangeUpgrade: 0
   damageUpgrade: 0
-  attackSpeedUpgrade: 0
+  attackSpeedUpgrade: 2
   projectileSpeedUpgrade: 0
   projectileSlowUpgrade: 0
   projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
+  sunRewardUpgrade: 0
+  changeProjectileTo: {fileID: 0}

@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 200
   sellValue: 0
-  description: Threepeaters shoot three peas at once.
+  description: "Threepeaters shoot three peas at once.\nAttack speed - \nDamage - "
   range: 10
   attackSpeed: 1
   timeSinceLastAttack: 0

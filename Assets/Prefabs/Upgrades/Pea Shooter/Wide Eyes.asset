@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wide Eyes
   m_EditorClassIdentifier: 
   cost: 10
-  killsNeeded: 1
+  killsNeeded: 0
   description: +10 range
   rangeUpgrade: 10
   damageUpgrade: 0

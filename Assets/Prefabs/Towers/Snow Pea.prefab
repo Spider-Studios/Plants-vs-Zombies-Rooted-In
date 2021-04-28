@@ -103,7 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 75
   sellValue: 0
-  description: Snow Peas shoot frozen peas that damage and slow the enemy.
+  description: "Snow Peas shoot frozen peas that damage and slow the enemy.\nAttack
+    speed - \nDamage - "
   range: 10
   attackSpeed: 1
   timeSinceLastAttack: 0

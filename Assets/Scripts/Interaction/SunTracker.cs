@@ -23,6 +23,7 @@ public class SunTracker : MonoBehaviour
     public int sun = 0;
     
     public Text sunDisplay;
+    public Text killsDisplay;
 
     Color baseColor;
 
@@ -69,6 +70,18 @@ public class SunTracker : MonoBehaviour
             sunDisplay.color = baseColor;
             yield return new WaitForSeconds(.1f);
         }
+    }
+
+    public IEnumerator FlashKillsText()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            killsDisplay.color = Color.red;
+            yield return new WaitForSeconds(.1f);
+            killsDisplay.color = baseColor;
+            yield return new WaitForSeconds(.1f);
+        }
+
     }
 
 }
