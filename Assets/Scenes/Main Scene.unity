@@ -11155,7 +11155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98ff82a85df70e419586584bd26e322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: -4480062728910909903, guid: 8e6b7af015c2d874dbffb6e01f8c765a, type: 3}
+  tower: {fileID: 6085887496486104741, guid: 1a8b43992e4022844982d1aaa2fba90d, type: 3}
   upgrade: {fileID: 0}
   tooltip: {fileID: 1157980618}
   type: 0
@@ -11208,7 +11208,7 @@ MonoBehaviour:
         m_MethodName: ShowHoverSprite
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: -4480062728910909903, guid: 8e6b7af015c2d874dbffb6e01f8c765a,
+          m_ObjectArgument: {fileID: 6085887496486104741, guid: 1a8b43992e4022844982d1aaa2fba90d,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: PvZRI.Towers.Tower, Assembly-CSharp
           m_IntArgument: 0
