@@ -134,13 +134,13 @@ MonoBehaviour:
   currentSpeed: 2
   moveSpeed: 1.5
   waypointIndex: 0
-  health: 5
+  health: 3
   hasBeenHit: 0
   colourTimer: 0.09
   isSlowed: 0
   slowTimer: 0
   reward: 2
-  damageToPlayer: 5
+  damageToPlayer: 3
   zombieHitSound: {fileID: 4617812170248785679}
   distanceTravelled: 0
   previousPosition: {x: 0, y: 0, z: 0}
