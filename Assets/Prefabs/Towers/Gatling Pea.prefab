@@ -102,9 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309764315857f86419a107e48ddb5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 400
   sellValue: 0
-  description: "gatling description\nAttack speed - \nDamage - "
+  description: 'gatling description
+
+    Attack speed - 4
+
+    Damage - 1'
   range: 15
   attackSpeed: 4
   timeSinceLastAttack: 0

@@ -137,7 +137,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 125
   sellValue: 0
-  description: "Starfruit description\nAttack speed - \nDamage - "
+  description: 'Starfruit description
+
+    Attack speed - 1
+
+    Damage - 1'
   range: 10
   attackSpeed: 1
   timeSinceLastAttack: 0

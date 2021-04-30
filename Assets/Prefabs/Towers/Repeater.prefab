@@ -104,7 +104,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 225
   sellValue: 0
-  description: "Repeater description\nAttack speed - \nDamage - "
+  description: 'Repeater description
+
+    Attack speed - 1
+
+    Damage - 1'
   range: 15
   attackSpeed: 1
   timeSinceLastAttack: 0

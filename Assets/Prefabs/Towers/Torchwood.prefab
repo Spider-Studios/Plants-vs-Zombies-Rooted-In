@@ -240,7 +240,7 @@ MonoBehaviour:
   sellValue: 0
   description: 'Torchwood
 
-    Damage increase- '
+    Damage increase- 1'
   range: 1
   attackSpeed: 1
   timeSinceLastAttack: 0
@@ -259,6 +259,8 @@ MonoBehaviour:
   upgradePath1:
   - {fileID: 11400000, guid: 79467253dde109b40b1ed4012d4616b6, type: 2}
   - {fileID: 11400000, guid: e6b87404f5d8b7c46ae23c094f338f77, type: 2}
+  - {fileID: 11400000, guid: 3cb2e037e24bdfc49ac76a9521574e9d, type: 2}
+  - {fileID: 11400000, guid: 303b59f699122a242a3dfff0286950f0, type: 2}
   path1Purchased: 0
   u1Purchased: 0
   u2Purchased: 0

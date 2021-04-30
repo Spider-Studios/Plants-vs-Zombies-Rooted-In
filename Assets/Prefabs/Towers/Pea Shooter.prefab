@@ -104,8 +104,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   sellValue: 0
-  description: "Peashooters are your first line of defence.\nThey shoot peas at attacking
-    zombies.\nAttack speed - \nDamage - \n"
+  description: 'Peashooters are your first line of defence.
+
+    They shoot peas
+    at attacking zombies.
+
+    Attack speed - 1.5
+
+    Damage - 1
+
+'
   range: 15
   attackSpeed: 1.5
   timeSinceLastAttack: 0
