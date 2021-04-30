@@ -25,6 +25,8 @@ public class Upgrade : ScriptableObject
     public int sunRewardUpgrade;
     [Space]
     public Projectile changeProjectileTo;
+    [Space]
+    public float torchwoodDamageIncrese;
 
     public void AddUpgrades()
     {
@@ -42,6 +44,12 @@ public class Upgrade : ScriptableObject
             towerToUpgrade.slowAmount += projectileSlowUpgrade;
             towerToUpgrade.slowTime += projectileSlowDurationUpgrade;
             towerToUpgrade.sunReward += sunRewardUpgrade;
+
+            if (towerToUpgrade.name == "Torchwood")
+            {
+                TorchwoodScript t = towerToUpgrade.GetComponent<TorchwoodScript>();
+                t.damageIncrease += torchwoodDamageIncrese;
+            }
 
             if(changeProjectileTo != null)
             towerToUpgrade.projectile = changeProjectileTo;

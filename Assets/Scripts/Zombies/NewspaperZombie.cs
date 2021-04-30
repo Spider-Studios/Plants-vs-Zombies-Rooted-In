@@ -19,6 +19,12 @@ namespace PvZRI.Zombies
         {
             move();
 
+            if (currentSpeed < 1)
+            {
+                currentSpeed = 1;
+            }
+            
+
             if (health <= 5)
             {
                 moveSpeed = 3;

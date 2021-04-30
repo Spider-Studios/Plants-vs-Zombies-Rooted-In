@@ -9,7 +9,6 @@ namespace PvZRI.Zombies
     {
         public GameObject[] waypoints;
         public GameObject waypointParent;
-        [HideInInspector]
         public float currentSpeed = 2f;
         public float moveSpeed = 2f;
         public int waypointIndex = 0;

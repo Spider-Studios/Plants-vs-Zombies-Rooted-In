@@ -7935,11 +7935,11 @@ MonoBehaviour:
   waves:
   - waveName: 1
     enemies:
-    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
-    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
-    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
-    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
-    - {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d, type: 3}
+    - {fileID: 902652705648067920, guid: cf4afe67108a8584aa7a142ee3e195f3, type: 3}
+    - {fileID: 902652705648067920, guid: cf4afe67108a8584aa7a142ee3e195f3, type: 3}
+    - {fileID: 902652705648067920, guid: cf4afe67108a8584aa7a142ee3e195f3, type: 3}
+    - {fileID: 902652705648067920, guid: cf4afe67108a8584aa7a142ee3e195f3, type: 3}
+    - {fileID: 902652705648067920, guid: cf4afe67108a8584aa7a142ee3e195f3, type: 3}
     spawnInterval: 1.5
     reward: 20
   - waveName: 2
