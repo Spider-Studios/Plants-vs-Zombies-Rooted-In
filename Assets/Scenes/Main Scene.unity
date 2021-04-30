@@ -229,7 +229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hi bucket hat makes him extremely resitant to damage
+  m_Text: His bucket hat makes him extremely resistant to damage
 --- !u!222 &13687299
 CanvasRenderer:
   m_ObjectHideFlags: 0
