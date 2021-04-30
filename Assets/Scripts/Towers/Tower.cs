@@ -50,6 +50,7 @@ namespace PvZRI.Towers
         public Upgrade[] upgradePath1;
 
         public int path1Purchased;
+        public bool u1Purchased, u2Purchased, u3Purchased, u4Purchased = false;
 
         public int killCount = 0;
         
@@ -65,7 +66,7 @@ namespace PvZRI.Towers
         public GameObject rangeDisplay = null;
 
         void Start()
-        {
+        { 
             sightRange = transform.Find("Sight Range").GetComponent<CircleCollider2D>();
 
             rangeDisplay = sightRange.transform.GetChild(0).gameObject;

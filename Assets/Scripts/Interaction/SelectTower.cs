@@ -47,7 +47,7 @@ namespace PvZRI.Interaction
         void Update()
         {
             string mouseOver = PlaceNewTower.instance.CheckWhatMouseIsOver();
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (mouseOver != "Plant")
                 {
@@ -76,7 +76,7 @@ namespace PvZRI.Interaction
                 upgrade2.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[1].name + "\n Cost: " + selected.upgradePath1[1].cost;
                 upgrade3.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[2].name + "\n Cost: " + selected.upgradePath1[2].cost;
                 upgrade4.transform.GetChild(0).GetComponent<Text>().text = selected.upgradePath1[3].name + "\n Cost: " + selected.upgradePath1[3].cost;
-                
+
                 //switch (selected.path1Purchased)
                 //{
                 //    case 1:
@@ -118,7 +118,47 @@ namespace PvZRI.Interaction
                 //        upgrade4.GetComponent<Button>().interactable = false;
                 //        break;
                 //}
+
+                if (selected.u1Purchased == false)
+                {
+                    upgrade1.GetComponent<Button>().interactable = true;
+                }
+                else
+                {
+                    upgrade1.GetComponent<Button>().interactable = false;
+                }
+
+                if (selected.u2Purchased == false)
+                {
+                    upgrade2.GetComponent<Button>().interactable = true;
+                }
+                else
+                {
+                    upgrade2.GetComponent<Button>().interactable = false;
+                }
+
+                if (selected.u3Purchased == false)
+                {
+                    upgrade3.GetComponent<Button>().interactable = true;
+                }
+                else
+                {
+                    upgrade3.GetComponent<Button>().interactable = false;
+                }
+
+                if (selected.u4Purchased == false)
+                {
+                    upgrade4.GetComponent<Button>().interactable = true;
+                }
+                else
+                {
+                    upgrade4.GetComponent<Button>().interactable = false;
+                }
+
+
             }
+
+
         }
 
         public void ShowSelectedPanel()
@@ -172,6 +212,7 @@ namespace PvZRI.Interaction
             if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[0].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[0].killsNeeded))
             {
                 selected.upgradePath1[0].AddUpgrades();
+                selected.u1Purchased = true;
                 upgrade1.GetComponent<Button>().interactable = false;
             }
         }
@@ -181,6 +222,7 @@ namespace PvZRI.Interaction
             if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[1].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[1].killsNeeded))
             {
                 selected.upgradePath1[1].AddUpgrades();
+                selected.u2Purchased = true;
                 upgrade2.GetComponent<Button>().interactable = false;
             }
         }
@@ -190,6 +232,7 @@ namespace PvZRI.Interaction
             if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[2].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[2].killsNeeded))
             {
                 selected.upgradePath1[2].AddUpgrades();
+                selected.u3Purchased = true;
                 upgrade3.GetComponent<Button>().interactable = false;
             }
         }
@@ -199,6 +242,7 @@ namespace PvZRI.Interaction
             if ((SunTracker.instance.HaveEnoughSun(selected.upgradePath1[3].cost)) && HaveEnoughKills(selected.killCount, selected.upgradePath1[3].killsNeeded))
             {
                 selected.upgradePath1[3].AddUpgrades();
+                selected.u4Purchased = true;
                 upgrade4.GetComponent<Button>().interactable = false;
             }
         }

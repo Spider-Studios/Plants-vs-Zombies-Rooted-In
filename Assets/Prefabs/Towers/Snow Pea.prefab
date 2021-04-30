@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4513153495644937650}
   - component: {fileID: 7500076193045099027}
   - component: {fileID: 6852047012922348482}
+  - component: {fileID: 7057817475462890712}
   m_Layer: 0
   m_Name: Snow Pea
   m_TagString: Plant
@@ -266,6 +267,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7057817475462890712
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810939519633661078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00cd5b745b9e44743ace18f4b6aa5482, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &863764386778993063
 GameObject:
   m_ObjectHideFlags: 0
