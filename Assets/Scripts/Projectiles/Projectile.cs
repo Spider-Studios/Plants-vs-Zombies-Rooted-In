@@ -19,12 +19,12 @@ namespace PvZRI.Towers
 
         private void Start()
         {
+            //destroy the projectile after 5 seconds
             Destroy(gameObject, 5);
         }
 
         private void Update()
         {
-          //GetComponent<Rigidbody2D>().velocity = transform.up * speed;
             if (health <= 0)
             {
                 Destroy(gameObject);
