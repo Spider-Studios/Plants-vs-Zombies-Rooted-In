@@ -258,9 +258,6 @@ MonoBehaviour:
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: 79467253dde109b40b1ed4012d4616b6, type: 2}
-  - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
-  - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
-  - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
   path1Purchased: 0
   u1Purchased: 0
   u2Purchased: 0
