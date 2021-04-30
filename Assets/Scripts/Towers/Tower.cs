@@ -73,6 +73,7 @@ namespace PvZRI.Towers
 
             selectTower = GameObject.FindWithTag("GameMaster").GetComponent<SelectTower>();
 
+            //sell cost equals half the cost put into the plant
             sellValue = cost / 2;
         }
 
@@ -91,9 +92,7 @@ namespace PvZRI.Towers
             {
                 rangeDisplay.SetActive(false);
             }
-
-
-
+            
             sightRange.radius = range;
             rangeDisplay.transform.localScale = new Vector3(range * 2, range * 2, 0);
         }
@@ -157,7 +156,6 @@ namespace PvZRI.Towers
 
                 transform.right = lookat;
                 }
-                //shoot 
             }
         }
 
@@ -168,10 +166,11 @@ namespace PvZRI.Towers
                 timeSinceLastAttack = Time.time;
                 for (int i = 0; i < projectileSpawn.Length; i++)
                 {
+                    //fire the projectile
                     Projectile shot = Instantiate(projectile, projectileSpawn[i].position, projectileSpawn[i].transform.rotation);
-                    //shot.GetComponent<Rigidbody2D>().velocity = (target.transform.position - transform.position).normalized * projectileSpeed;
                     shot.GetComponent<Rigidbody2D>().velocity = projectileSpawn[i].right * projectileSpeed;
                     Projectile proj = shot.GetComponent<Projectile>();
+                    //set all the projectiles stats
                     proj.damage = damage;
                     proj.speed = projectileSpeed;
                     proj.health = projectileHealth;
@@ -211,6 +210,5 @@ namespace PvZRI.Towers
                 }
             }
         }
-
     }
 }

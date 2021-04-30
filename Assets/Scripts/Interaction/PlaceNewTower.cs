@@ -27,21 +27,20 @@ namespace PvZRI.Interaction
 
         Tower towerToSpawn = null;
         bool showSprite = false;
-        private bool textBlink = false;
         GameObject sprite = null;
 
         public GameObject rangeDisp;
         GameObject disp;
 
         SunTracker sunTracker;
+
         void Start()
         {
-            sunTracker = GetComponent<SunTracker>();
+            sunTracker = SunTracker.instance;
         }
 
         void Update()
         {
-            // print(CheckWhatMouseIsOver());
             if (sprite != null)
             {
                 if (sprite.active)
@@ -95,9 +94,6 @@ namespace PvZRI.Interaction
                 disp = Instantiate(rangeDisp, sprite.transform);
                 disp.transform.localScale = new Vector3(towerToSpawn.range * 2, towerToSpawn.range * 2, 0);
                 showSprite = true;
-            }
-            else
-            {
             }
         }
 

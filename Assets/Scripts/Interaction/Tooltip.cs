@@ -40,6 +40,7 @@ public class Tooltip : MonoBehaviour
         Vector3 newPos = Input.mousePosition + offset;
         newPos.z = 0f;
 
+        //make sure it doesnt go off screen
         float rightEdgeToScreenDistance = Screen.width - (newPos.x + popupObject.rect.width * canvas.scaleFactor / 2) - padding;
         if(rightEdgeToScreenDistance <0)
         {
