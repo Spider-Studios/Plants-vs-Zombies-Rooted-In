@@ -47,6 +47,11 @@ namespace PvZRI.Zombies
 
         private void Update()
         {
+            if (currentSpeed < 1)
+            {
+                currentSpeed = 1;
+            }
+
             move();
 
             if (health <= 0)
