@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Solar Power
   m_EditorClassIdentifier: 
   cost: 200
-  description: +50 sun
+  killsNeeded: 0
+  description: +10 sun
   rangeUpgrade: 0
   damageUpgrade: 0
   attackSpeedUpgrade: 0
@@ -21,4 +22,5 @@ MonoBehaviour:
   projectileSlowUpgrade: 0
   projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
-  sunRewardUpgrade: 50
+  sunRewardUpgrade: 10
+  changeProjectileTo: {fileID: 0}

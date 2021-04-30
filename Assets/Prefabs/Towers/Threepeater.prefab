@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309764315857f86419a107e48ddb5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 200
+  cost: 175
   sellValue: 0
   description: "Threepeaters shoot three peas at once.\nAttack speed - \nDamage - "
   range: 10
@@ -131,6 +131,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
   - {fileID: 11400000, guid: f848dd8924c6dc04495b1c52a790a3d9, type: 2}
   path1Purchased: 0
+  u1Purchased: 0
+  u2Purchased: 0
+  u3Purchased: 0
+  u4Purchased: 0
   killCount: 0
   targets: []
   shootingAt: {fileID: 0}

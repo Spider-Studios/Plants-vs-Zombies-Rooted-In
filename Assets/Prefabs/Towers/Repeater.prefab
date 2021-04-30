@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309764315857f86419a107e48ddb5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 225
   sellValue: 0
   description: "Repeater description\nAttack speed - \nDamage - "
   range: 15
@@ -128,6 +128,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c193f74a23208744b9c7415896b4f740, type: 2}
   - {fileID: 11400000, guid: 9a947430765de7b46ac5a5c9958aa414, type: 2}
   path1Purchased: 0
+  u1Purchased: 0
+  u2Purchased: 0
+  u3Purchased: 0
+  u4Purchased: 0
   killCount: 0
   targets: []
   shootingAt: {fileID: 0}

@@ -107,7 +107,7 @@ MonoBehaviour:
   description: "Peashooters are your first line of defence.\nThey shoot peas at attacking
     zombies.\nAttack speed - \nDamage - \n"
   range: 15
-  attackSpeed: 1
+  attackSpeed: 1.5
   timeSinceLastAttack: 0
   targeting: 0
   rotates: 1
@@ -128,6 +128,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6b8e5634f1c2e5141bb1c85a87a6d1ff, type: 2}
   - {fileID: 11400000, guid: e5625f19e09ba6c428c52eddf4060f6d, type: 2}
   path1Purchased: 0
+  u1Purchased: 0
+  u2Purchased: 0
+  u3Purchased: 0
+  u4Purchased: 0
   killCount: 0
   targets: []
   shootingAt: {fileID: 0}
