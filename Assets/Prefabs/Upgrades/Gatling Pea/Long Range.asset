@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7b1b1b864cdfa24789cd457a615b131, type: 3}
-  m_Name: Dual Shot
+  m_Name: Long Range
   m_EditorClassIdentifier: 
-  cost: 0
-  rangeUpgrade: 0
+  cost: 150
+  killsNeeded: 0
+  description: +5 sight range
+  rangeUpgrade: 5
   damageUpgrade: 0
   attackSpeedUpgrade: 0
   projectileSpeedUpgrade: 0
   projectileSlowUpgrade: 0
   projectileSlowDurationUpgrade: 0
   projectileHealthUpgrade: 0
+  sunRewardUpgrade: 0
+  changeProjectileTo: {fileID: 0}

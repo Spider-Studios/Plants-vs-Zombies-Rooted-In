@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309764315857f86419a107e48ddb5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 150
   sellValue: 0
   description: "Splitpea description\nAttack speed - \nDamage - "
   range: 20
@@ -124,11 +124,15 @@ MonoBehaviour:
   sunReward: 0
   canBePlacedOn: 0
   upgradePath1:
-  - {fileID: 11400000, guid: 8f0d0ed91e0951846ba0be9d6fdc2a85, type: 2}
-  - {fileID: 11400000, guid: 1629cc983c1acad48a70f8016ce4f9b8, type: 2}
-  - {fileID: 11400000, guid: 6b8e5634f1c2e5141bb1c85a87a6d1ff, type: 2}
-  - {fileID: 11400000, guid: e5625f19e09ba6c428c52eddf4060f6d, type: 2}
+  - {fileID: 11400000, guid: e94a9596d53b3dc499a7e256cf4919ac, type: 2}
+  - {fileID: 11400000, guid: 63031db6cecf8b541b6ee15872beefe8, type: 2}
+  - {fileID: 11400000, guid: f05b1868de385634fa4d34aca09f6a7c, type: 2}
+  - {fileID: 11400000, guid: 9319bc73fa50a3d4e8f30278fd1ca96e, type: 2}
   path1Purchased: 0
+  u1Purchased: 0
+  u2Purchased: 0
+  u3Purchased: 0
+  u4Purchased: 0
   killCount: 0
   targets: []
   shootingAt: {fileID: 0}

@@ -122,11 +122,15 @@ MonoBehaviour:
   sunReward: 0
   canBePlacedOn: 0
   upgradePath1:
-  - {fileID: 11400000, guid: 8f0d0ed91e0951846ba0be9d6fdc2a85, type: 2}
-  - {fileID: 11400000, guid: 1629cc983c1acad48a70f8016ce4f9b8, type: 2}
-  - {fileID: 11400000, guid: 6b8e5634f1c2e5141bb1c85a87a6d1ff, type: 2}
-  - {fileID: 11400000, guid: e5625f19e09ba6c428c52eddf4060f6d, type: 2}
+  - {fileID: 11400000, guid: c289498201106bc419bf99ae66999ee3, type: 2}
+  - {fileID: 11400000, guid: 32a6988965fac724384298e09d7e9ddc, type: 2}
+  - {fileID: 11400000, guid: 2c6a1f313d184044eac92798b79eb025, type: 2}
+  - {fileID: 11400000, guid: 62437c9410b91974a94f8d7ed77a75e7, type: 2}
   path1Purchased: 0
+  u1Purchased: 0
+  u2Purchased: 0
+  u3Purchased: 0
+  u4Purchased: 0
   killCount: 0
   targets: []
   shootingAt: {fileID: 0}

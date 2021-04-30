@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309764315857f86419a107e48ddb5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 150
   sellValue: 0
   description: "Sunflowers produce 25 Sun at the end of each round.\nAttack speed
     - \nDamage - "
@@ -119,7 +119,7 @@ MonoBehaviour:
   slowTime: 0
   projectileSpawn:
   - {fileID: 6683730700520231442}
-  sunReward: 25
+  sunReward: 15
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: 56d57acc192a7f44bb8cdbc1a461687d, type: 2}
@@ -127,6 +127,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6624db1544db7004c9ec5e76b8c586ce, type: 2}
   - {fileID: 11400000, guid: b73e772bcaa5af54891ad15b0544d476, type: 2}
   path1Purchased: 0
+  u1Purchased: 0
+  u2Purchased: 0
+  u3Purchased: 0
+  u4Purchased: 0
   killCount: 0
   targets: []
   shootingAt: {fileID: 0}

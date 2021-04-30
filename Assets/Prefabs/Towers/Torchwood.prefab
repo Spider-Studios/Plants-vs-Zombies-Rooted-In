@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72fb84445fde124aa6a0739c3f3fd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 75
   sellValue: 0
   description: 'Torchwood
 
@@ -258,10 +258,11 @@ MonoBehaviour:
   canBePlacedOn: 0
   upgradePath1:
   - {fileID: 11400000, guid: 79467253dde109b40b1ed4012d4616b6, type: 2}
-  - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
-  - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
-  - {fileID: 11400000, guid: f121ec978036e9e459f4fa217ac93ced, type: 2}
   path1Purchased: 0
+  u1Purchased: 0
+  u2Purchased: 0
+  u3Purchased: 0
+  u4Purchased: 0
   killCount: 0
   targets: []
   shootingAt: {fileID: 0}
