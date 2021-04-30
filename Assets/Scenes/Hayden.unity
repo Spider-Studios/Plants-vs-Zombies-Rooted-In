@@ -679,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieToSpawn: {fileID: 7831621989952849199, guid: ff92905dbb6d29d4e8bd2f30a6bfe83d,
     type: 3}
-  zombieToSpawn2: {fileID: 370704609102490899, guid: b711a46362f666b4aa624e3ed7ea5411,
+  zombieToSpawn2: {fileID: 8094954150637096233, guid: fbfc626eecc219a42b246bf8d525d8a2,
     type: 3}
   spawnLocation: {fileID: 997200946}
 --- !u!4 &63547126

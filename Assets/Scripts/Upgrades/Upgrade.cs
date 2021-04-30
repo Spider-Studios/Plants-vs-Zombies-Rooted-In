@@ -57,7 +57,6 @@ public class Upgrade : ScriptableObject
 
         if (towerToUpgrade.killCount < killsNeeded)
         {
-            Debug.Log("A");
             sunTracker.FlashKillsText();
         }
     }
